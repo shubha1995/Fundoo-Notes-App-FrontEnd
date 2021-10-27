@@ -5,7 +5,6 @@ import PersonIcon from "@material-ui/icons/Person";
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 
-
 const Login =() => {
     const paperStyle = {
         padding: 20,
