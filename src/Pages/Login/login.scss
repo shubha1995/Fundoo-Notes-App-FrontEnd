@@ -1,0 +1,27 @@
+.register{
+    text-align: center;
+}
+.paperStyle {
+    padding-top:2vh;
+    padding-right: 1vh;
+    padding-left: 4vh;
+    height:70vh;
+    width:80vh;
+    margin:20px };
+
+    .head {color : red};
+
+    .fieldStyle {margin:2vh };
+
+    .box{
+        display: flex;
+        flex-flow: column wrap;
+        justify-content: space-between;
+        padding-top: 5vh;
+    }   
+
+    .signIn{
+    padding-top: 5vh;
+    padding-left: 15vh
+    
+    }

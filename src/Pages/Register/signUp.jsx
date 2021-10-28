@@ -1,6 +1,6 @@
 import React from 'react'
-import { Grid, Paper, Avatar, Typography, TextField, Button } from '@material-ui/core'
-import PersonAddOutlinedIcon from "@material-ui/icons/PersonAddOutlined";
+import { Grid, Paper, Typography, TextField, Button } from '@material-ui/core'
+import FundooHeader from '../../Components/FundooHeader/FundooHeader';
 import FormControlLabel from '@material-ui/core/FormControlLabel';
 import Checkbox from '@material-ui/core/Checkbox';
 const SignUp = () => {
@@ -10,15 +10,12 @@ const SignUp = () => {
         margin: "20px auto",
         height: "70vh",
      }
-    const avatarStyle = { backgroundColor: '#1bbd7e' }
     const btstyle = { margin: "12px 0" };
     return (
         <Grid>
             <Paper elevation={20} style={paperStyle}>
                 <Grid align='center'>
-                    <Avatar style={avatarStyle}>
-                        <PersonAddOutlinedIcon />
-                    </Avatar>
+                    <FundooHeader/>
                     <h2>Sign Up</h2>
                     <Typography variant='caption' gutterBottom>Please fill this form to create an account !</Typography>
                 </Grid>
