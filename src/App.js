@@ -1,7 +1,7 @@
 import React from "react";
 import './App.css';
 import Login from "./Pages/Login/login.jsx";
-import SignUp from "./Pages/Register/signUp.jsx"
+import SignUp from "./Pages/Register/Register.jsx"
 
 function App() {
   return (

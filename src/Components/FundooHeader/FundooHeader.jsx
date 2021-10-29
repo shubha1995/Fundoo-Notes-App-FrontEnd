@@ -1,8 +1,8 @@
-import '../FundooHeader/FundooHeader.css'
+import '../FundooHeader/FundooHeader.scss'
 export default function FundooHeader(){
     return(<h1 >
                   <span className="fun1">F</span>
-                  <span className="fun2">u</span> 
+                  <span className="fun2">u</span>  
                   <span className="fun3">n</span> 
                   <span className="fun4">d</span> 
                   <span className="fun5">o</span> 

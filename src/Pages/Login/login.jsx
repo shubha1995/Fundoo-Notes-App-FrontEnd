@@ -2,6 +2,7 @@
 import React from "react"
 import { Grid, Paper, TextField, Button, Typography, Link } from "@material-ui/core";
 import FundooHeader from '../../Components/FundooHeader/FundooHeader';
+import '../Login/login.scss'
 
 const Login =() => {
     const paperStyle = {
@@ -17,14 +18,15 @@ const Login =() => {
                 <Grid align="center">
                     <FundooHeader/>
                 <h2>Sign In</h2>
+                <h4>Use your FundooNotes Account</h4>
                 </Grid>
-                <TextField label= "email Id" placeholder= "Enter user emailId" fullWidth required/>
-                <TextField label= "Password" placeholder= "Enter password" type="password" fullWidth required/>
+                <TextField variant="outlined" label= "email Id" placeholder= "Enter user emailId" fullWidth required margin="normal"/>
+                <TextField variant="outlined" label= "Password" placeholder= "Enter password" type="password" fullWidth required margin="normal"/>
                 <Button type="submit" color="primary" variant="contained" style={btstyle} fullWidth> Sign in</Button>
                 <Typography>
                     <Link href="#">Forgot password</Link>
                 </Typography>
-                <Typography> Do you have an account ?
+                <Typography>Create a new account? 
                     <Link href="#">
                         Sign Up
                     </Link>
