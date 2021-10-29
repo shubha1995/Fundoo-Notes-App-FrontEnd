@@ -1,17 +1,31 @@
 .register{
     text-align: center;
 }
+.paperStyle {
+    padding-top:2vh;
+    padding-right: 1vh;
+    padding-left: 4vh;
+    height:70vh;
+    width:80vh;
+    margin:20px };
 
-.header{
-    font-family: 'Open Sans', sans-serif;
-    font-family: 'Roboto', sans-serif;
-}
+    .head {color : red};
 
-h4{
-    font-family: 'Open Sans', sans-serif;
-}
+    .fieldStyle {margin:2vh };
+  
 
-.signIn{
-    padding-top: 5vh;
-padding-left: 15vh
-}
+    .signIn{
+        padding-top: 5vh;
+        padding-left: 15vh
+    
+    }
+
+    
+    .header{
+        font-family: 'Open Sans', sans-serif;
+        font-family: 'Roboto', sans-serif;
+    }
+    
+    h4{
+        font-family: 'Open Sans', sans-serif;
+    }
