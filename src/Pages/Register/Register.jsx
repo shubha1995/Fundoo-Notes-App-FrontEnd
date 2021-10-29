@@ -15,7 +15,7 @@ const SignUp = () => {
             <Paper elevation={20} style={paperStyle}>
                 <Grid align='center'>
                     <FundooHeader/>
-                    <h4>Please Fill Details to Create an Account</h4>
+                    <h4>Create your FundooNotes Account</h4>
                     
                 </Grid>
                 <form>

@@ -17,15 +17,15 @@ const Login =() => {
             <Paper elevation={10} style={paperStyle}>
                 <Grid align="center">
                     <FundooHeader/>
-                <h2>Sign In</h2>
+                <h2 className="header">Sign In</h2>
                 <h4>Use your FundooNotes Account</h4>
                 </Grid>
-                <TextField variant="outlined" label= "email Id" placeholder= "Enter user emailId" fullWidth required margin="normal"/>
+                <TextField variant="outlined" label= "Email Id" placeholder= "Enter user emailId" fullWidth required margin="normal"/>
                 <TextField variant="outlined" label= "Password" placeholder= "Enter password" type="password" fullWidth required margin="normal"/>
                 <Typography>
                     <Link href="#">Forgot password</Link>
                 </Typography>
-                <Button type="submit" color="primary" variant="contained" style={btstyle} fullWidth > Sign in</Button>
+                <Button className="signIn"type="submit" color="primary" variant="contained" style={btstyle} fullWidth > Sign in</Button>
 
                 <p className='register'><Button href='/register' color='primary' variant = 'text'>Create account</Button></p>          
             </Paper>
