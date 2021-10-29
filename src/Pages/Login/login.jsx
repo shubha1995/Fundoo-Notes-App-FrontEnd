@@ -22,15 +22,12 @@ const Login =() => {
                 </Grid>
                 <TextField variant="outlined" label= "email Id" placeholder= "Enter user emailId" fullWidth required margin="normal"/>
                 <TextField variant="outlined" label= "Password" placeholder= "Enter password" type="password" fullWidth required margin="normal"/>
-                <Button type="submit" color="primary" variant="contained" style={btstyle} fullWidth> Sign in</Button>
                 <Typography>
                     <Link href="#">Forgot password</Link>
                 </Typography>
-                <Typography>Create a new account? 
-                    <Link href="#">
-                        Sign Up
-                    </Link>
-                </Typography>            
+                <Button type="submit" color="primary" variant="contained" style={btstyle} fullWidth > Sign in</Button>
+
+                <p className='register'><Button href='/register' color='primary' variant = 'text'>Create account</Button></p>          
             </Paper>
         </Grid>
     )

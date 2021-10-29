@@ -1,14 +1,19 @@
 import React from "react";
 import './App.css';
+import { Switch,Route } from 'react-router-dom';
 import Login from "./Pages/Login/login.jsx";
-import SignUp from "./Pages/Register/Register.jsx"
+import Register from "./Pages/Register/Register.jsx"
 
 function App() {
   return (
-    <div className="App">
-      <Login/>,
-      <SignUp/>
-    </div>
+    <>
+    <Switch>
+      <Route path='/login' component={Login}/>
+      <Route path ='/register' component={Register}/>
+      <Route exact path = '/' component = {Login}/>
+    </Switch>
+    </>
+    
   );
 }
 
