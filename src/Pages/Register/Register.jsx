@@ -14,8 +14,7 @@ const SignUp = () => {
                             firstName :'',
                             lastName :'',
                             emailId :'',
-                            password :'',
-                            confirmPassword:''
+                            password :''
                     }}
                 validationSchema ={yup.object({
                     firstName : yup.string().required('Required'),
@@ -56,7 +55,7 @@ const SignUp = () => {
                                 onBlur = {formik.handleBlur}
                                 value = {formik.values.firstName}
                                 helperText = {<ErrorMessage name = "firstName"
-                                                style = {{textDecorationColor:"red"}}/>}
+                                style = {{textDecorationColor:"red"}}/>}
                             />
                         </Grid>
                         <Grid item sm = {3}>
@@ -96,24 +95,11 @@ const SignUp = () => {
                                 id = 'password'
                                 label = "password"
                                 variant = "outlined"
-                                className = 'textStyle'
+                                className = 'textField'
                                 value = {formik.values.password}
                                 helperText = {<ErrorMessage name = "password"/>}
                                 onChange = {formik.handleChange}
-                                onBlur = {formik.handleBlur}                               />
-                        </Grid>
-                        <Grid item sm = {3}>
-                            <Field
-                                as = {TextField}
-                                type='password'
-                                id = 'confirmPassword'
-                                label = "confirmPassword"
-                                variant = "outlined"
-                                className = 'textStyle'
-                                value = {formik.values.confirmPassword}
-                                helperText = {<ErrorMessage name = "confirmPassword"/>}
-                                onChange = {formik.handleChange}
-                                onBlur = {formik.handleBlur}                                 
+                                onBlur = {formik.handleBlur}                              
                             />
                         </Grid>
                     </Grid>  
