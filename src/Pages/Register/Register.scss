@@ -1,56 +1,137 @@
-h4{
-    font-family: 'Open Sans', sans-serif;
-}
-.paperStyle{
-    padding-top:5vh;
-    padding-right: 1vh;
-    padding-left: 4vh;
-    height: 80vh;
-    width: 105vh;
-    margin:12vh auto
-};
-.textStyle {
-    width: 25vh;
-    padding-right: 15vh
+.formStyle {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    .paperStyle {
+      min-height: 100vh;
+      display: flex;
+      justify-content: left;
+      align-items: flex-start;
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: 1px solid #dadce0;
+      background-color: #ffffff;
+      margin: 10px 0;
+    }
+    
+    
+    .headerStyle {
+        color:black !important;
+        text-align: left ;
+    }
+
+    .fun1 {
+        color: rgb(66, 133, 244);
+    }
+    .fun2 {
+        color: rgb(234, 67, 53);
+    }
+    .fun3 {
+        color: rgb(251, 188, 5);
+    }
+    .fun4 {
+        color: rgb(66, 133, 244);
+    }
+    .fun5 {
+        color: rgb(52, 168, 83);
+    }
+    .fun6 {
+        color: rgb(234, 67, 53);
+    }
+
+    .register-avatar{
+        width: 250px;
+        height: 100%;
+        text-align: center;
+        position: relative;
+        top: 24%;
+        left: 4%;
+    }
+
+    .register-form-element {
+        min-height: 90px;
+        .MuiInputLabel-formControl {
+            top: -7px;
+        }
+    }
+    .register-form-inputs input{
+        font-size: 14px;
+        height: 30px;
+        padding: 6px 8px;
+    }
+    .register-form-button {
+        background-color: #1a73e8;
+        color: #ffffff;
+        margin: 30px 0;
+        width: 50%;
+        height: 50px;
+        margin: 20px auto;
+    }
+    .register-form-button:hover{
+        background-color: #1a73e8;
+        box-shadow: none;
+    }
+    .submit-button{
+        text-align: center;
+        width: 100%;
+    }
  
-    };
+    .register-form-inputs{
+        margin: 20px 0 0 0;
+    }
 
-.textField{
-    width:52vh;
-    margin-top:20px;
-    padding: 20vh
-};
+    .submit-button{
+        margin-bottom: 50px;
+        text-align: center;
+        width: 100%;
+        line-height: 1.4286;
+        
+    }
+
+    .submit-button{
+        text-align: center;
+        width: 100%;
+       
+    }
+    .signInlink{
+        margin: 5px 0;
+        text-align: left;
+        
+    }
+}
+    .header {
+        font-weight: bold;
+        color: blue;
+        padding: 5;
+      }
+
+       /* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {}
 
 
-.head {
-    color : orange;
-     };
-
-.button{
-    width: 52vh;
-    padding-top: 4vh;
-
-    
-    
-    };
-.box{
-    display: flex;
-    flex-flow: column wrap;
-    justify-content: space-between;
-    padding-top: 5vh;
-}   
-
-.name{
-    display: flex;
-    flex-flow: row wrap;
-   
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .register-container{
+        min-height: 500px !important;
+        width: 450px;
+        padding: 48px 40px 36px;
+    }
 }
 
-.register-avatar{
-    position: relative;
-    width: 350px;
-    height: 200%;
-    left: 58vh;
-    bottom: 55vh;
-  
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .register-container{
+        width: 750px;
+        min-height: 500px !important;
+        padding: 48px 40px 36px !important;
+    }
 }
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}

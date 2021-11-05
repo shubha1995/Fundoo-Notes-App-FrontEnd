@@ -1,21 +1,138 @@
-.register {
-    text-align: center;
+.formStyle {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .register-paper {
+      min-height: 100vh;
+      display: flex;
+      justify-content: left;
+      align-items: flex-start;
+      padding: 10px 20px;
+      border-radius: 8px;
+      border: 1px solid #dadce0;
+      background-color: #ffffff;
+    }
 }
 
-.fieldStyle {
-    margin: 2vh;
-};
+    .login-paper {
+        min-height: 100vh;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px 20px;
+        border-radius: 8px;
+        border: 1px solid #dadce0;
+        background-color: #ffffff;
+        text-align: center;
+    }
 
-.signIn {
-    padding-top: 5vh;
-    padding-left: 15vh;
+      .fundoo-body {
+        padding: 0;
+    }
+    .fun1 {
+        color: rgb(66, 133, 244);
+    }
+    .fun2 {
+        color: rgb(234, 67, 53);
+    }
+    .fun3 {
+        color: rgb(251, 188, 5);
+    }
+    .fun4 {
+        color: rgb(66, 133, 244);
+    }
+    .fun5 {
+        color: rgb(52, 168, 83);
+    }
+    .fun6 {
+        color: rgb(234, 67, 53);
+    }
+
+.login-form-container {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 20px;
 }
 
-.header {
-    font-family: 'Open Sans', sans-serif;
+.login-form {
+    margin: 20px;
 }
 
-h4 {
-    font-family: 'Roboto', sans-serif;
+.EmailFieldStyle {
+    min-height: 90px;
+    margin-bottom: 0px;
 }
 
+.buttonMargin {
+    color: white !important; 
+    border : solid 1px black !important  ;
+    background-color: blue !important  ;
+}
+
+.PasswordStyle{
+    margin-bottom: 20px !important;
+    margin-top:0px;
+}
+
+.textspace{
+    margin-top:10px !important;
+}
+
+  /* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) {
+    .register-container{
+        min-height: 500px !important;
+        width: 450px;
+        padding: 48px 40px 36px;
+    }
+    .login-container{
+        min-height: 400px !important;
+        width: 350px;
+    }
+    .forgot-password-container{
+        min-height: 400px !important;
+        width: 350px;
+        text-align: center;
+        padding: 50px !important;
+    }
+     .login-paper {
+        position: relative;
+        bottom: 5%;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) {
+    .register-container{
+        width: 750px;
+        min-height: 500px !important;
+        padding: 48px 40px 36px !important;
+    }
+    .login-container{
+        width: 600px;
+        min-height: 400px !important;
+    }
+    .forgot-password-container{
+        width: 600px;
+        min-height: 400px !important;
+        text-align: center;
+        padding: 50px !important;
+    }
+}
+
+h2, h1{
+    margin: 0px;
+}
+
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {}

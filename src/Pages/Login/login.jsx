@@ -1,97 +1,113 @@
 import React from "react";
-import { Grid, Paper, TextField, Button, Typography, Link } from "@material-ui/core";
+import { Grid, Paper, TextField, Button } from "@material-ui/core";
+import {Formik, Form, Field, ErrorMessage} from 'formik'
+import { BrowserRouter as Router} from 'react-router-dom'
+import * as Yup from 'yup'
 import FundooHeader from '../../Components/FundooHeader/FundooHeader';
-import { ErrorMessage ,Formik, Field, Form} from 'formik';
-import * as yup from 'yup';
 import '../Login/login.scss';
+import { useHistory } from 'react-router-dom';
+import { UserNode } from "../../Services/User";
+// import {toast, ToastContainer} from 'react-toastify';
+// import "react-toastify/dist/ReactToastify.css";
 
-const Login =() => {
-    const paperStyle = {
-        padding: 20,
-        height: "75vh",
-        width: 280,
-        margin: "50px auto",
-    };
-    const fieldStyle = {margin:'5vh 0'}; 
+const userNode = new UserNode ()
 
- 
-    return (
-        <Formik
-        initialValues ={{
-            emailId:'',
-            password:''
-          }}
-          validationSchema ={ yup.object({
-            emailId: yup.string().email('Invalid Email address').required('Required'),
-            password:yup.string()
-            .required('Required')
+const Login = (props) => {
+  const history = useHistory();  
+  const initialValues = {
+    emailId:'',
+    password:''
+} ;
+const validationSchema=Yup.object().shape({
+  emailId:Yup.string().email('please enter valid email').required("Enter a email address"),
+  password:Yup.string().required("Enter a password")
+
+});
+
+
+const onSubmit=(values,props)=>{
+  console.log(values)
+  
+  const userCredentials = {
+    email: values.emailId,
+    password: values.password
+  };
+  props.resetForm();
+  
+  userNode.login(userCredentials)
+       .then((res) => {
+         localStorage.setItem('token', res.data.token);
+          
+          setTimeout(() => {
+            history.push('/dashboard');
+          }, 2000);
+      }).catch(error => {
+          error(error.message);
+      });
+    }
     
-          })}
-          onSubmit = {values=>{
-            console.log(values);
-            Login(values)
-              .then(response => console.log(response ))
-              .catch(error=>console.log(error))
-          }}
-          >
+    
 
-        {formik =>(
-        <Grid>
-            <Paper elevation={10} style={paperStyle} >
-                <Grid align="center">
-                    <FundooHeader/>
-                <h2 className="header">Sign In</h2>
-                <h4>Use your FundooNotes Account</h4>
-                </Grid>
-                <Form onSubmit={formik.handleSubmit}> 
-                     <Field id="emailId"
-                      as = {TextField} 
-                      name = 'emailId'
-                      label="EmailId" 
-                      variant="outlined"
-                      onChange = {formik.handleChange}
-                      onBlur = {formik.handleBlur}
-                      value={formik.values.emailId}
-                      
-                      helperText = {<ErrorMessage name = 'emailId'/>}
-                      fullWidth
-                      required/>
-                      
-                    <Field
-                      as = {TextField}
-                      name="password"
-                      id="password" 
-                      label="Password" 
-                      type="password" 
-                      fullWidth 
-                      variant="outlined" 
-                      onChange = {formik.handleChange}
-                      helperText = {<ErrorMessage name = 'password'/>}
-                      value={formik.values.password}
-                      required  
-                      margin="normal"
-                      style = {fieldStyle}
-                    />
-                      
-                <Typography className="forgotPass">
-                    <Link href="/forgotPassword">Forgot password</Link>
-                </Typography>
-                <Typography>
-                    <br></br>
-                    <Button type = "Submit" 
-                    color = "primary" 
-                    variant = "contained"  
-                    className='signIn' fullWidth>
-                      Sign In</Button>
-                  </Typography>
-
-                <p className='register'><Button href='/register' color='primary' variant = 'text'>Create account</Button></p>          
-                </Form>
-            </Paper>
-        </Grid>
-        )}
-        </Formik>
-    )
+  return (
+    <Router>
+    <div>
+    <Grid className="formStyle">
+      <Paper className="login-container login-paper">
+        <div  align="center" className="login-form-container">
+        <FundooHeader/>
+          <Grid>
+            <h2 data-testid="login">Sign in</h2>
+          </Grid>
+        <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
+          {(props)=>(
+            <Form data-testid="form"  className="login-form">
+        <Field 
+        as={TextField}
+        className="EmailFieldStyle"
+         data-testid="email" 
+          label="email Id"
+          name="emailId"
+          placeholder="Enter user emailId"
+          variant="outlined"
+          fullWidth
+          helperText={<ErrorMessage name="emailId"/>}
+        />
+        <Field 
+        as={TextField}
+        className="PasswordStyle"
+        data-testid="password"
+          label="Password"
+          name="password"
+          placeholder="Enter password"
+          variant="outlined"
+          type="password"
+          fullWidth
+          helperText={<ErrorMessage name="password"/>}
+        />
+        <p className='register'><Button href='/forgotPassword' color='primary' variant = 'text'>Forgot password</Button></p>  
+        {/* <Typography className="forgotPass">
+            <Link href="/forgotPassword">Forgot password</Link>
+        </Typography> */}
+        <Button 
+        className="buttonMargin" 
+        color = "primary" 
+        type="submit" 
+        data-testid="button"
+        variant="contained"  
+        //disabled={props.isSubmitting}
+        fullWidth> 
+        Sign in</Button> 
+        <p className='register'><Button href='/register' color='primary' variant = 'text'>Create account</Button></p>    
+            </Form>
+          )
 }
+        </Formik>
+        </div>
+      </Paper>
+    </Grid>
+    </div>  
+    </Router>
+  );
+};
 
 export default Login;

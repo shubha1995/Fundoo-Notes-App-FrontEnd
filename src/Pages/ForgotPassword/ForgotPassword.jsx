@@ -55,8 +55,9 @@ const ForgotPassword =() => {
                       required/>
                       
                       
+                      
                 <Typography>
-                    <br></br>
+                <br></br>
                     <Button type = "Submit" 
                     color = "primary" 
                     variant = "contained"  
