@@ -149,9 +149,6 @@ const SignUp = () => {
               )}
             </Formik>
             <p className="signInlink"> <Button href='/login' color='primary' variant = 'text'>Sign in instead</Button></p>
-            {/* <Typography className="signInlink">
-              <Link to="/login">Sign in instead</Link>
-            </Typography> */}
           </div>
           <div className="register-avatar">
             <img
