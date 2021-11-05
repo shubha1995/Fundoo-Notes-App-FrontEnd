@@ -81,58 +81,6 @@
     margin-top:10px !important;
 }
 
-  /* Extra small devices (phones, 600px and down) */
-@media only screen and (max-width: 600px) {}
-
-/* Small devices (portrait tablets and large phones, 600px and up) */
-@media only screen and (min-width: 600px) {
-    .register-container{
-        min-height: 500px !important;
-        width: 450px;
-        padding: 48px 40px 36px;
-    }
-    .login-container{
-        min-height: 400px !important;
-        width: 350px;
-    }
-    .forgot-password-container{
-        min-height: 400px !important;
-        width: 350px;
-        text-align: center;
-        padding: 50px !important;
-    }
-     .login-paper {
-        position: relative;
-        bottom: 5%;
-    }
-}
-
-/* Medium devices (landscape tablets, 768px and up) */
-@media only screen and (min-width: 768px) {}
-
-/* Large devices (laptops/desktops, 992px and up) */
-@media only screen and (min-width: 992px) {
-    .register-container{
-        width: 750px;
-        min-height: 500px !important;
-        padding: 48px 40px 36px !important;
-    }
-    .login-container{
-        width: 600px;
-        min-height: 400px !important;
-    }
-    .forgot-password-container{
-        width: 600px;
-        min-height: 400px !important;
-        text-align: center;
-        padding: 50px !important;
-    }
-}
-
 h2, h1{
     margin: 0px;
 }
-
-
-/* Extra large devices (large laptops and desktops, 1200px and up) */
-@media only screen and (min-width: 1200px) {}

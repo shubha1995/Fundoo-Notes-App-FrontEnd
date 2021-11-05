@@ -7,8 +7,6 @@ import FundooHeader from '../../Components/FundooHeader/FundooHeader';
 import '../Login/login.scss';
 import { useHistory } from 'react-router-dom';
 import { UserNode } from "../../Services/User";
-// import {toast, ToastContainer} from 'react-toastify';
-// import "react-toastify/dist/ReactToastify.css";
 
 const userNode = new UserNode ()
 
@@ -85,16 +83,12 @@ const onSubmit=(values,props)=>{
           helperText={<ErrorMessage name="password"/>}
         />
         <p className='register'><Button href='/forgotPassword' color='primary' variant = 'text'>Forgot password</Button></p>  
-        {/* <Typography className="forgotPass">
-            <Link href="/forgotPassword">Forgot password</Link>
-        </Typography> */}
         <Button 
         className="buttonMargin" 
         color = "primary" 
         type="submit" 
         data-testid="button"
-        variant="contained"  
-        //disabled={props.isSubmitting}
+        variant="contained"   
         fullWidth> 
         Sign in</Button> 
         <p className='register'><Button href='/register' color='primary' variant = 'text'>Create account</Button></p>    
