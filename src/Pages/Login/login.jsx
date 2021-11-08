@@ -7,7 +7,8 @@ import FundooHeader from '../../Components/FundooHeader/FundooHeader';
 import '../Login/login.scss';
 import { useHistory } from 'react-router-dom';
 import { UserNode } from "../../Services/User";
-
+import {toast, ToastContainer} from 'react-toastify';
+import "react-toastify/dist/ReactToastify.css";
 
 const userNode = new UserNode ()
 
@@ -36,9 +37,9 @@ const onSubmit=(values,props)=>{
   userNode.login(userCredentials)
        .then((res) => {
          localStorage.setItem('token', res.data.token);
-        
+         toast.success("Login Successfull");
       }).catch((error) => {
-        
+        toast.error(error.message);
       });
     }
     
@@ -90,7 +91,7 @@ const onSubmit=(values,props)=>{
         variant="contained"   
         fullWidth> 
         Sign in</Button> 
-       
+        <ToastContainer position='top-center'/>
         <p className='register'><Button href='/register' color='primary' variant = 'text'>Create account</Button></p>    
             </Form>
           )
