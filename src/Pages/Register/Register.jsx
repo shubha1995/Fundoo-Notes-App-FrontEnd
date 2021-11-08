@@ -1,6 +1,6 @@
 import React from "react";
-import { Grid, Paper,  TextField, Button } from "@material-ui/core";
-import { BrowserRouter as Router} from 'react-router-dom';
+import { Grid, Paper,  TextField, Button, Typography } from "@material-ui/core";
+import {Link, BrowserRouter as Router} from 'react-router-dom';
 import FundooHeader from '../../Components/FundooHeader/FundooHeader';
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";
@@ -18,7 +18,7 @@ const SignUp = () => {
     emailId: "",
     password: "",
   };
-  const validationSchema = Yup.object().shape({
+const validationSchema = Yup.object().shape({
     firstName: Yup.string()
       .min(3, "first Name is too short minimum 3 Char is required")
       .required("Fisrts name required"),
@@ -125,7 +125,6 @@ const SignUp = () => {
                         placeholder="Enter password"
                         variant="outlined"
                         type="password"
-                        fullWidth
                         helperText={<ErrorMessage name="password" />}
                       />
                     </Grid>
@@ -147,7 +146,11 @@ const SignUp = () => {
                   </Grid>
                 </Form>
               )}
+              
             </Formik>
+            {/* <Typography className="signInlink">
+              <Link to="/login">Sign in instead</Link>
+            </Typography> */}
             <p className="signInlink"> <Button href='/login' color='primary' variant = 'text'>Sign in instead</Button></p>
           </div>
           <div className="register-avatar">
