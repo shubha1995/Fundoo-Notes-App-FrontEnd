@@ -5,6 +5,7 @@ import { BrowserRouter as Router} from 'react-router-dom'
 import * as Yup from 'yup'
 import FundooHeader from '../../Components/FundooHeader/FundooHeader';
 import '../Login/login.scss';
+import { useHistory } from 'react-router-dom';
 import { UserNode } from "../../Services/User";
 import {toast, ToastContainer} from 'react-toastify';
 import "react-toastify/dist/ReactToastify.css";
@@ -12,6 +13,7 @@ import "react-toastify/dist/ReactToastify.css";
 const userNode = new UserNode ()
 
 const Login = (props) => {  
+  const history = useHistory(); 
   const initialValues = {
     emailId:'',
     password:''
@@ -35,6 +37,11 @@ const onSubmit=(values,props)=>{
   userNode.login(userCredentials)
        .then((res) => {
          localStorage.setItem('token', res.data.token);
+         const token1 = localStorage.getItem("token");
+        console.log(token1);
+         setTimeout(() => {
+          history.push('/dashboard');
+        }, 2000);
          toast.success("Login Successfull");
       }).catch((error) => {
         toast.error("Please enter valid email & password");
