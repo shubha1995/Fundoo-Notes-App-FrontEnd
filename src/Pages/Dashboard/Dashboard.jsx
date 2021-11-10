@@ -1,10 +1,10 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 /* eslint-disable react/jsx-no-duplicate-props */
 import React from "react";
-import clsx from "clsx";
 import "./Dashboard.scss";
 import { makeStyles } from "@material-ui/core/styles";
 import Drawer from "@material-ui/core/Drawer";
+import clsx from "clsx";
 import AppBar from "@material-ui/core/AppBar";
 import Toolbar from "@material-ui/core/Toolbar";
 import List from "@material-ui/core/List";
@@ -379,7 +379,7 @@ export default function Dashboard(props) {
           onMouseLeave={drawerClose}
           variant="permanent"
           color="transparent"
-          className={clsx(classes.drawer, {
+          className={(classes.drawer, {
             [classes.drawerOpen]: open,
             [classes.drawerClose]: !open,
           })}
