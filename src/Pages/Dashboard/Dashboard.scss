@@ -1,0 +1,152 @@
+.root {
+    display: flex;
+  }
+  .lastContent {
+    display: flex;
+    align-items: flex-start;
+  }
+  .drawerButton {
+    margin: 8px 0 8px 0;
+  }
+  
+  .tooltip {
+    position: relative;
+    display: inline-block;
+  }
+  
+  /* Tooltip text */
+  .tooltip .tooltiptext {
+    visibility: hidden;
+    width: 60px;
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #fff;
+    text-align: center;
+    padding: 5px 0;
+    opacity: 0.87;
+    top: 51px;
+    z-index: 1;
+    right: -6px;
+    border-radius: 10px !important;
+  
+    /* Position the tooltip text - see examples below! */
+    position: absolute;
+    z-index: 1;
+  }
+  
+  .zindex {
+    z-index: 1;
+  }
+  
+  /* Show the tooltip text when you mouse over the tooltip container */
+  .tooltip:hover .tooltiptext {
+    visibility: visible;
+  }
+  
+  .drawerButton:hover {
+    background-color: rgb(236, 236, 236);
+    border-top-right-radius: 70px;
+    border-bottom-right-radius: 70px;
+  }
+  .topBar {
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .leftOptions {
+    width: 70%;
+    /* border: black solid; */
+    display: flex;
+    justify-self: start;
+    justify-content: space-between;
+  }
+  .rightOptions {
+    width: 26%;
+    /* border: black solid; */
+    display: flex;
+    justify-self: end;
+    justify-content: space-between;
+  }
+  .headerIcon {
+    width: 45px;
+  }
+  .startOptions {
+    display: flex;
+    align-items: center;
+  }
+  .buttonContainer {
+    display: flex;
+  }
+  
+  .headerTitle {
+    margin: 3%;
+    color: #5f6368;
+    font-size: x-large;
+    font-family: "Product Sans", Arial, sans-serif;
+  }
+  .search {
+    margin: 5px 5px 5px 5px;
+    height: 50px;
+    width: 70%;
+    display: flex;
+    align-items: center;
+    background-color: rgb(238, 238, 238);
+    border-radius: 8px;
+  }
+  .searchedButton {
+    display: none;
+  }
+  .searchIcon {
+    margin-left: 3%;
+  }
+  
+  // .MuiPaper-root.MuiMenu-paper.MuiPopover-paper.MuiPaper-elevation8.MuiPaper-rounded {
+  //   top: 32px !important;
+  //   right: 5px;
+  // }
+  .searchInput {
+    margin-left: 2%;
+    width: 80%;
+  }
+  .appsContainer {
+    display: flex;
+  }
+  .MenuList {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .displayNotes {
+    margin: 1%;
+    margin-left: 200px;
+  }
+  
+  @media only screen and (max-width: 900px) {
+    .search {
+      display: none;
+    }
+    .searchedButton {
+      display: initial;
+    }
+    .leftOptions {
+      width: auto;
+    }
+    .rightOptions {
+      width: auto;
+    }
+  }
+  
+  @media only screen and (max-width: 400px) {
+    .headerTitle {
+      margin: 1%;
+      font-size: 1.1em;
+    }
+    .headerIcon {
+      width: 30px;
+    }
+    .rightOptions {
+      justify-content: flex-end;
+    }
+  }
