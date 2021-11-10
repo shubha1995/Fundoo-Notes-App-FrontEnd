@@ -11,4 +11,8 @@ export class UserNode {
       console.log(userCredentials)
       return Axios.post('/login',userCredentials);
   }
+  
 }
+export const forgot = (data) => {
+  return Axios.post("/forgotPassword", data);
+};
