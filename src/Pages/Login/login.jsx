@@ -37,7 +37,7 @@ const onSubmit=(values,props)=>{
          localStorage.setItem('token', res.data.token);
          toast.success("Login Successfull");
       }).catch((error) => {
-        toast.error(error.message);
+        toast.error("Please enter valid email & password");
       });
     }
     
