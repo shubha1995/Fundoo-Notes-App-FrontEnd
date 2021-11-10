@@ -26,6 +26,8 @@ import ListItemIcon from "@material-ui/core/ListItemIcon";
 import ListItemText from "@material-ui/core/ListItemText";
 import AccountCircleOutlinedIcon from "@material-ui/icons/AccountCircle";
 import { useHistory } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -216,8 +218,13 @@ export default function Dashboard(props) {
   };
 
   const logOut = () => {
-    localStorage.removeItem("token");
-    nextPath("../login");
+    setTimeout(() => {
+        localStorage.removeItem("token");
+        nextPath("../login");
+      }, 2000);
+      toast.success("logout successfully", {
+        position: "top-center",
+      });
   };
 
   return (
@@ -479,6 +486,7 @@ export default function Dashboard(props) {
           </div>
         </main>
       </div>
+      <ToastContainer />
     </div>
   );
 }
