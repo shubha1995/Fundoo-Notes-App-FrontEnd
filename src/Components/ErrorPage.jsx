@@ -8,7 +8,7 @@ const ErrorPage = () => {
     <Grid>
       <h1>Page Not Found</h1>
       <Link to="/login">Back To Login Page</Link>
-      <img src= {image} alt=""></img>
+      <img src= {image} alt=""></img>  
     </Grid>
   );
 };

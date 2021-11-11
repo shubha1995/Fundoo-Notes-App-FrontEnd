@@ -6,6 +6,7 @@ import Register from "./Pages/Register/Register.jsx"
 import FrogotPassword from "./Pages/ForgotPassword/ForgotPassword.jsx"
 import Dashboard from "./Pages/Dashboard/Dashboard.jsx"
 import ErrorPage from "./Components/ErrorPage.jsx";
+import ProtectedRoute from "../src/Components/ProtectedRoute.jsx";
 
 function App() {
   return (
@@ -16,7 +17,10 @@ function App() {
       <Route path ='/register' component={Register}/>
       <Route exact path = '/' component = {Login}/>
       <Route path ='/forgotPassword' component={FrogotPassword}/>
-      <Route path="/dashboard" component={Dashboard}/>
+      <ProtectedRoute
+            path="/dashboard"
+            component={Dashboard}
+          ></ProtectedRoute>
       <Route component={ErrorPage} />
     </Switch>
     </BrowserRouter>
