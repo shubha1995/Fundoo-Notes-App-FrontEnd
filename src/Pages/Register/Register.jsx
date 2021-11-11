@@ -1,6 +1,6 @@
 import React from "react";
-import { Grid, Paper,  TextField, Button, Typography } from "@material-ui/core";
-import {Link, BrowserRouter as Router} from 'react-router-dom';
+import { Grid, Paper,  TextField, Button } from "@material-ui/core";
+import { BrowserRouter as Router} from 'react-router-dom';
 import FundooHeader from '../../Components/FundooHeader/FundooHeader';
 import { Formik, Field, Form, ErrorMessage } from "formik";
 import * as Yup from "yup";

@@ -5,6 +5,7 @@ import Login from "./Pages/Login/login.jsx";
 import Register from "./Pages/Register/Register.jsx"
 import FrogotPassword from "./Pages/ForgotPassword/ForgotPassword.jsx"
 import Dashboard from "./Pages/Dashboard/Dashboard.jsx"
+import ErrorPage from "./Components/ErrorPage.jsx";
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
       <Route exact path = '/' component = {Login}/>
       <Route path ='/forgotPassword' component={FrogotPassword}/>
       <Route path="/dashboard" component={Dashboard}/>
+      <Route component={ErrorPage} />
     </Switch>
     </BrowserRouter>
     </>
