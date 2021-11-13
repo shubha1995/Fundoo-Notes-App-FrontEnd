@@ -11,6 +11,7 @@ import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
 
+
 const userNode = new UserNode();
 const SignUp = () => {
   const history = useHistory();
