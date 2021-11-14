@@ -1,123 +1,60 @@
-.formStyle {
-    height: 100vh;
+* {
+    box-sizing: border-box;
+  }
+  
+  $blue: blue;
+  $red: red;
+  $orange: orange;
+  $margin: 10px 0px;
+  
+  .display-center {
+    min-height: 50vh;
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    .register-paper {
-      min-height: 100vh;
-      display: flex;
-      justify-content: left;
-      align-items: flex-start;
-      padding: 10px 20px;
-      border-radius: 8px;
-      border: 1px solid #dadce0;
-      background-color: #ffffff;
-    }
-}
-
-    .login-paper {
-        min-height: 100vh;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 10px 20px;
-        border-radius: 8px;
-        border: 1px solid #dadce0;
-        background-color: #ffffff;
-        text-align: center;
-    }
-
-      .fundoo-body {
-        padding: 0;
-    }
-  
-.login-form-container {
-    display: flex;
-    flex-direction: column;
-    height: 100%;
-    padding: 20px;
-}
-
-.login-form {
-    margin: 20px;
-}
-
-.EmailFieldStyle {
-    min-height: 90px;
-    margin-bottom: 0px;
-}
-
-.buttonMargin {
-    color: white !important; 
-    border : solid 1px black !important  ;
-    background-color: blue !important  ;
-}
-
-.PasswordStyle{
-    margin-bottom: 20px !important;
-    margin-top:0px;
-}
-
-.textspace{
-    margin-top:10px !important;
-}
-
-h2, h1{
-    margin: 10px;
-}
-
-
-  /* Extra small devices (phones, 600px and down) */
-  @media only screen and (max-width: 600px) {}
-
-  /* Small devices (portrait tablets and large phones, 600px and up) */
-  @media only screen and (min-width: 600px) {
-      .register-container{
-          min-height: 500px !important;
-          width: 450px;
-          padding: 48px 40px 36px;
-      }
-      .login-container{
-          min-height: 400px !important;
-          width: 350px;
-      }
-      .forgot-password-container{
-          min-height: 400px !important;
-          width: 350px;
-          text-align: center;
-          padding: 50px !important;
-      }
-       .login-paper {
-          position: relative;
-          bottom: 5%;
-      }
+    justify-content: center;
   }
   
-  /* Medium devices (landscape tablets, 768px and up) */
-  @media only screen and (min-width: 768px) {}
-  
-  /* Large devices (laptops/desktops, 992px and up) */
-  @media only screen and (min-width: 992px) {
-      .register-container{
-          width: 750px;
-          min-height: 500px !important;
-          padding: 48px 40px 36px !important;
-      }
-      .login-container{
-          width: 600px;
-          min-height: 400px !important;
-      }
-      .forgot-password-container{
-          width: 600px;
-          min-height: 400px !important;
-          text-align: center;
-          padding: 50px !important;
-      }
+  .paperStyle {
+    padding: 10px 20px;
+    margin: 20px auto;
+    border-radius: 10px !important;
+    width: auto;
+    max-width: 380px;
+    min-width: 100px;
   }
   
+  .txtStyle {
+    color: $blue;
+    font-size: 28px;
+  }
   
+  .txtStyle2 {
+    color: $red;
+  }
   
+  .txtStyle3 {
+    color: $orange;
+  }
   
-  /* Extra large devices (large laptops and desktops, 1200px and up) */
-  @media only screen and (min-width: 1200px) {}
+  .tfStyle {
+    margin: $margin !important;
+  }
+  
+  .typoStyle {
+    margin: $margin !important;
+  }
+  
+  .buttonStyle {
+    margin: 10px 0px !important;
+  }
+  
+  .error {
+    color: $red !important;
+    position: absolute !important;
+  }
+  
+  .MuiFormHelperText-root {
+    color: $red !important;
+  }
+ 

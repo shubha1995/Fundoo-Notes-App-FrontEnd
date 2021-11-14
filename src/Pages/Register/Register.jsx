@@ -175,7 +175,7 @@ const validationSchema = Yup.object().shape({
                           Sign Up
                         </Button>
                         <p className="signInlink"> 
-                        <Button href='/login' color='primary' variant = 'text'>Sign in instead</Button>
+                        <Button href='/login' color= "primary" variant = 'text'>Sign in instead</Button>
                         </p>
                       </Grid>
                     </Grid>

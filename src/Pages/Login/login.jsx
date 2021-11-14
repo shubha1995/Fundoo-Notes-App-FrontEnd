@@ -20,7 +20,7 @@ const Login = (props) => {
 } ;
 const validationSchema=Yup.object().shape({
   emailId:Yup.string().email('please enter valid email').required("Enter a email address"),
-  password:Yup.string().required("Enter a password")
+  password:Yup.string().min(6, "Password must be at least 6 characters").required("Enter a password")
 
 });
 
@@ -32,17 +32,14 @@ const onSubmit=(values,props)=>{
     password: values.password
   };
   
-  props.resetForm();
   
   userNode.login(userCredentials)
        .then((res) => {
          localStorage.setItem('token', res.data.token);
-         const token1 = localStorage.getItem("token");
-        console.log(token1);
          setTimeout(() => {
           history.push('/dashboard');
-        }, 2000);
-         toast.success("Login Successfull");
+        }, 5000);
+         toast.success("Login Successfull ✔");
       }).catch((error) => {
         toast.error("Please enter valid email & password");
       });
@@ -50,64 +47,66 @@ const onSubmit=(values,props)=>{
     
     
 
-  return (
-    <Router>
-    <div>
-    <Grid className="formStyle">
-      <Paper className="login-container login-paper">
-        <div  align="center" className="login-form-container">
-        <FundooHeader/>
-          <Grid>
-            <h2 data-testid="login">Sign in</h2>
-          </Grid>
-        <Formik initialValues={initialValues} onSubmit={onSubmit} validationSchema={validationSchema}>
-          {(props)=>(
-            <Form data-testid="form"  className="login-form">
-        <Field 
-        as={TextField}
-        className="EmailFieldStyle"
-         data-testid="email" 
-          label="email Id"
-          name="emailId"
-          placeholder="Enter user emailId"
-          variant="outlined"
-          fullWidth
-          helperText={<ErrorMessage name="emailId"/>}
-        />
-        <Field 
-        as={TextField}
-        className="PasswordStyle"
-        data-testid="password"
-          label="Password"
-          name="password"
-          placeholder="Enter password"
-          variant="outlined"
-          type="password"
-          fullWidth
-          helperText={<ErrorMessage name="password"/>}
-        />
-        <p className='register'><Button href='/forgotPassword' color='primary' variant = 'text'>Forgot password</Button></p>  
-        <Button 
-        className="buttonMargin" 
-        color = "primary" 
-        type="submit" 
-        data-testid="button"
-        // onSubmit = {onSubmit}
-        variant="contained"   
-        fullWidth> 
-        Sign in</Button> 
-        <ToastContainer position='top-center'/>
-        <p className='register'><Button href='/register' color='primary' variant = 'text'>Create account</Button></p>    
-            </Form>
-          )
-}
-        </Formik>
-        </div>
-      </Paper>
-    </Grid>
-    </div>  
-    </Router>
-  );
-};
+    return (
+      <Router>
+        <Grid className="display-center">
+          <Paper elevation={8} className="paperStyle">
+            <Grid align="center">
+              <FundooHeader />
+              <h2 data-testid="login">Sign In</h2>
+            </Grid>
+            <Formik
+              initialValues={initialValues}
+              validationSchema={validationSchema}
+              onSubmit={onSubmit}
+            >
+              {(props) => (
+                <Form data-testid="form">
+                  <Field
+                    as={TextField}
+                    data-testid="email"
+                    label="Email Id"
+                    name="emailId"
+                    variant="outlined"
+                    fullWidth
+                    className="tfStyle"
+                    helperText={<ErrorMessage name="emailId" />}
+                  />
+                  <Field
+                    as={TextField}
+                    label="Password"
+                    data-testid="password"
+                    name="password"
+                    variant="outlined"
+                    type="password"
+                    fullWidth
+                    helperText={<ErrorMessage name="password" />}
+                  />
+              <p className='register'>
+                <Button href='/forgotPassword' color='primary' variant = 'text'>Forgot password</Button>
+              </p>  
+                  <Button
+                    data-testid="button"
+                    type="submit"
+                    color="primary"
+                    variant="contained"
+                    className="buttonStyle"
+                    fullWidth
+                    disabled={props.isSubmitting}
+                  >
+                    {props.isSubmitting ? "Loading" : "Sign in"}
+                  </Button>
+                </Form>
+              )}
+            </Formik>
+              <p className='register'>
+                <Button href='/register' color='primary' variant = 'text'>Create account</Button>
+              </p> 
+          </Paper>
+          <ToastContainer />
+        </Grid>
+      </Router>
+    );
+  };
 
 export default Login;
