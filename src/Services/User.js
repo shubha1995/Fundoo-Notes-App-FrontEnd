@@ -13,6 +13,6 @@ export class UserNode {
   }
   
 }
-export const forgot = (data) => {
-  return Axios.post("/forgotPassword", data);
-};
+// export const forgot = (data) => {
+//   return Axios.post("/forgotPassword", data);
+// };
