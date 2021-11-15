@@ -134,18 +134,18 @@ export default function NoteOptions(props) {
           </div>
         ) : (
           <div className="optionfield">
-            {/* <IconButton className={classes.button}>
+            <IconButton className={classes.button}>
               <AddAlertIcon />
             </IconButton>
             <IconButton className={classes.button}>
               <PersonAddIcon />
-            </IconButton> */}
+            </IconButton>
             <IconButton onClick={colorsHandleClick} className={classes.button}>
               <ColorLensOutlinedIcon />
             </IconButton>
-            {/* <IconButton className={classes.button}>
+            <IconButton className={classes.button}>
               <ImageOutlinedIcon />
-            </IconButton> */}
+            </IconButton>
 
             <IconButton className={classes.button} onClick={deleteHandleOpen}>
               <MoreVertOutlinedIcon />

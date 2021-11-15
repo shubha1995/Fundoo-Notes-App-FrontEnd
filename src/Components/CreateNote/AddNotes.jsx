@@ -66,7 +66,6 @@ export default function AddNote(props) {
         console.log("Error = " + err);
       });
 
-    // let formData = new FormData();
 
     if (title === undefined && note === undefined) {
       console.log("Please Enter Data");
@@ -74,39 +73,6 @@ export default function AddNote(props) {
       titleDisplay(false);
       return null;
     }
-
-    // formData.append("title", title);
-    // console.log("titleAppend", title);
-    // formData.append("description", note);
-
-    // if (edit) {
-    //   console.log("updateId", noteId);
-    //   formData.append("noteId", noteId);
-    //   Services.updateNotes(formData)
-    //     .then((data) => {
-    //       console.log("Update Data: " + data);
-    //       props.getall();
-    //     })
-    //     .catch((err) => {
-    //       console.log("Update Data Error = " + err);
-    //     });
-    //   titleDisplay(false);
-    //   props.dialogOff();
-    // } else {
-    //   console.log("addnote", formData);
-    //   Services.addNote(formData)
-    //     .then((data) => {
-    //       console.log("Add Notes: " + data);
-    //       props.getall();
-    //     })
-    //     .catch((err) => {
-    //       console.log("Error = " + err);
-    //     });
-    //   setTitle("");
-    //   setNote("");
-    //   setClr("#fafafa");
-    //   titleDisplay(false);
-    // }
   };
 
   return (
@@ -144,17 +110,6 @@ export default function AddNote(props) {
               fullWidth
               onChange={(e) => setNote(e.target.value)}
             />
-          </div>
-          <div style={{ display: showTitle ? "none" : "block" }}>
-            {/* <IconButton>
-              <CheckBoxOutlinedIcon />
-            </IconButton>
-            <IconButton>
-              <BrushOutlinedIcon />
-            </IconButton>
-            <IconButton>
-              <ImageOutlinedIcon />
-            </IconButton> */}
           </div>
         </div>
         <ToastContainer />

@@ -6,7 +6,6 @@ import Snackbar from "@material-ui/core/Snackbar";
 import MuiAlert from "@material-ui/lab/Alert";
 import FundooHeader from '../../Components/FundooHeader/FundooHeader';
 import "./ResetPassword.scss";
-//const service = new Services();
 
 
 function Alert(props) {
@@ -130,8 +129,8 @@ function Alert(props) {
               <h2>Reset Password</h2>
               <h3>Use your Fundoo Account</h3>
             </Grid>
-            <form className="Form" data-testid="form">
-              <div className="inputField">
+            <form className="Form" data-testid="form"> 
+             <div className="inputField">
                 <TextField
                   size="small"
                   className="tfStyle"

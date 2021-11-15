@@ -15,6 +15,15 @@ class UserNoteServices {
       });
     };
 
+      static deleteForever = (data) => {
+        const token = localStorage.getItem("token");
+        console.log("deleteToken ::", token);
+        return Axios.delete(`http://localhost:3000/deletenotes/${data.id}`, {
+          headers: { Authorization: `Bearer ${token}` },
+        });
+      };
+    
+
     static forgotPassword = (data) => {
         return Axios.post("http://localhost:3000/forgotPassword", data);
       };
