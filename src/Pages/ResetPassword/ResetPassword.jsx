@@ -150,7 +150,7 @@ function Alert(props) {
               <div className="inputField">
                 <TextField
                   size="small"
-                  label="Conform"
+                  label="Confirm password"
                   variant="outlined"
                   type="password"
                   fullWidth

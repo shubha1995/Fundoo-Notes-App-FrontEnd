@@ -18,6 +18,11 @@ class UserNoteServices {
     static forgotPassword = (data) => {
         return Axios.post("http://localhost:3000/forgotPassword", data);
       };
+
+      static resetPassword = (data, token) => {
+        console.log("token -> ", token);
+        return Axios.post("http://localhost:3000/resetPassword", data, token);
+      };
   }
   
   export default UserNoteServices;
