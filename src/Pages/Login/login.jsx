@@ -53,7 +53,7 @@ const onSubmit=(values,props)=>{
           <Paper elevation={8} className="paperStyle">
             <Grid align="center">
               <FundooHeader />
-              <h2 data-testid="login">Sign In</h2>
+              <h3 data-testid="login">Sign In</h3>
             </Grid>
             <Formik
               initialValues={initialValues}

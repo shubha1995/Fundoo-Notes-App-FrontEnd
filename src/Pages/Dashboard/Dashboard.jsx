@@ -28,6 +28,9 @@ import AccountCircleOutlinedIcon from "@material-ui/icons/AccountCircle";
 import { useHistory } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
+import Notes from "../../Components/CreateNote/Notes";
+import { Switch } from "react-router-dom";
+import ProtectedRoute from "../../Components/ProtectedRoute";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -484,6 +487,11 @@ export default function Dashboard(props) {
 
         <main className={classes.main}>
           <div className={classes.content}>
+          <Switch>
+              <ProtectedRoute path="/dashboard/notes">
+                <Notes search={search} />
+              </ProtectedRoute>
+          </Switch>
           </div>
         </main>
       </div>

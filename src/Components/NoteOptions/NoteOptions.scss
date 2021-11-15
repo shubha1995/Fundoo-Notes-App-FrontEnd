@@ -1,0 +1,17 @@
+.optionButtons {
+    display: flex;
+    flex-direction: row;
+  }
+  .colorDiv {
+    width: 5px;
+    height: 5px;
+    border: black solid 1px;
+    border-radius: 100px;
+  }
+  
+  @media only screen and (max-width: 400px) {
+    .optionfield {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
