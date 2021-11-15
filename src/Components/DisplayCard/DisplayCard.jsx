@@ -6,6 +6,7 @@ import AddNote from "../../Components/CreateNote/AddNotes";
 import Typography from "@material-ui/core/Typography";
 import "./DisplayCard.scss";
 
+
 const useStyles = makeStyles((theme) => ({
   dialogBox: {
     display: "flex",
@@ -57,12 +58,10 @@ export default function DisplayNotes(props) {
     setOpen(false);
   };
 
-
   const Note = () => {
     console.log(" props.notes :: ", props.notes);
     return (
       <div className="AllNotes">
-
         {props.notes.length &&
           props.notes.map((data) => (
             <div

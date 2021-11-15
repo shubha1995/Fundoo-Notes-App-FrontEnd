@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-no-duplicate-props */
 import React from "react";
 import InputBase from "@material-ui/core/InputBase";
@@ -8,9 +9,10 @@ import IconButton from "@material-ui/core/IconButton";
 import ImageOutlinedIcon from "@material-ui/icons/ImageOutlined";
 import NoteOptions from "../NoteOptions/NoteOptions";
 import Services from "../../Services/NotesServices.js";
-import { toast, ToastContainer } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify"; 
 import "react-toastify/dist/ReactToastify.css";
 import "./AddNotes.scss";
+
 
 const useStyles = makeStyles((theme) => ({
   titleInput: {
@@ -35,14 +37,16 @@ export default function AddNote(props) {
   var [showTitle, titleDisplay] = React.useState(props.editOpen);
   var [title, setTitle] = React.useState(props.editTitle);
   var [note, setNote] = React.useState(props.editDisc);
-  const [edit] = React.useState(props.setEdited);
+  const [edit, setEdit] = React.useState(props.setEdited);
   const [clr, setClr] = React.useState(props.editColor);
-  const [archive] = React.useState(props.archive);
-  const [trash] = React.useState(props.trash);
-  const [takeNote] = React.useState(true);
+  const [noteId, setNoteId] = React.useState(props.editId);
+  const [archive, setArchive] = React.useState(props.archive);
+  const [trash, setTrash] = React.useState(props.trash);
+  const [takeNote, setTakeNote] = React.useState(true);
 
   const clickedNote = () => {
     titleDisplay(true);
+    console.log("i m in ");
   };
 
   const closeNote = () => {
@@ -53,14 +57,16 @@ export default function AddNote(props) {
     };
     Services.addNote(formval)
       .then((data) => {
-        toast.success("Notes created");
         console.log("Add Notes: " + data);
+        toast.success("Notes created");
         props.getall();
       })
       .catch((err) => {
         toast.error("Note not created");
+        console.log("Error = " + err);
       });
 
+    // let formData = new FormData();
 
     if (title === undefined && note === undefined) {
       console.log("Please Enter Data");
@@ -68,10 +74,44 @@ export default function AddNote(props) {
       titleDisplay(false);
       return null;
     }
+
+    // formData.append("title", title);
+    // console.log("titleAppend", title);
+    // formData.append("description", note);
+
+    // if (edit) {
+    //   console.log("updateId", noteId);
+    //   formData.append("noteId", noteId);
+    //   Services.updateNotes(formData)
+    //     .then((data) => {
+    //       console.log("Update Data: " + data);
+    //       props.getall();
+    //     })
+    //     .catch((err) => {
+    //       console.log("Update Data Error = " + err);
+    //     });
+    //   titleDisplay(false);
+    //   props.dialogOff();
+    // } else {
+    //   console.log("addnote", formData);
+    //   Services.addNote(formData)
+    //     .then((data) => {
+    //       console.log("Add Notes: " + data);
+    //       props.getall();
+    //     })
+    //     .catch((err) => {
+    //       console.log("Error = " + err);
+    //     });
+    //   setTitle("");
+    //   setNote("");
+    //   setClr("#fafafa");
+    //   titleDisplay(false);
+    // }
   };
 
   return (
     <div
+      data-testId="close"
       className="addNotesMain"
       onClickAway={closeNote}
       style={{ backgroundColor: clr }}
@@ -81,7 +121,11 @@ export default function AddNote(props) {
           className="addNoteField"
           style={{ display: showTitle ? "block" : "none" }}
         >
-          <div className="titleInput" className={classes.titleInput}>
+          <div
+            className="titleInput"
+            data-testid="title"
+            className={classes.titleInput}
+          >
             <InputBase
               className={classes.input}
               placeholder="Title"
@@ -92,7 +136,7 @@ export default function AddNote(props) {
           </div>
         </div>
         <div class="simpleNoteShow">
-          <div className="noteInput">
+          <div className="noteInput" data-testid="description">
             <InputBase
               className={classes.input}
               placeholder="Take a note..."
@@ -102,7 +146,7 @@ export default function AddNote(props) {
             />
           </div>
           <div style={{ display: showTitle ? "none" : "block" }}>
-            <IconButton>
+            {/* <IconButton>
               <CheckBoxOutlinedIcon />
             </IconButton>
             <IconButton>
@@ -110,7 +154,7 @@ export default function AddNote(props) {
             </IconButton>
             <IconButton>
               <ImageOutlinedIcon />
-            </IconButton>
+            </IconButton> */}
           </div>
         </div>
         <ToastContainer />
@@ -119,7 +163,7 @@ export default function AddNote(props) {
         className="addNoteField"
         style={{ display: showTitle ? "block" : "none" }}
       >
-        <div className="addNoteOptions">
+        <div className="addNoteOptions" data-testid="editId">
           <NoteOptions
             setClr={setClr}
             setEdited={edit}
@@ -133,10 +177,10 @@ export default function AddNote(props) {
           {trash ? (
             " "
           ) : (
-            <div className="closeNotes">
+            <div className="closeNotes" data-testid="Save">
               {" "}
               <IconButton className={classes.closeNotes} onClick={closeNote}>
-                CLOSE
+                Add
               </IconButton>
             </div>
           )}

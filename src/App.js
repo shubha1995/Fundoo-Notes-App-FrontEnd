@@ -7,6 +7,7 @@ import FrogotPassword from "./Pages/ForgotPassword/ForgotPassword.jsx"
 import Dashboard from "./Pages/Dashboard/Dashboard.jsx"
 import ErrorPage from "./Components/ErrorPage.jsx";
 import ProtectedRoute from "../src/Components/ProtectedRoute.jsx";
+import resetpassword from "./Pages/ResetPassword/ResetPassword.jsx";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
       <Route path ='/register' component={Register}/>
       <Route exact path = '/' component = {Login}/>
       <Route path ='/forgotPassword' component={FrogotPassword}/>
+      <Route path="/resetPassword" component={resetpassword} />
       <ProtectedRoute
             path="/dashboard"
             component={Dashboard}
