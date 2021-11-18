@@ -39,7 +39,8 @@ const ResetPassword = () => {
     password: Yup.string()
       .required("Password Required"),
       confirmPassword: Yup.string()
-      .required("ConfirmPassword Required"),
+      .oneOf([Yup.ref("password")], "Password doesn't matched")
+      .required("confirm password should match password"),
   });
   return (
     <Grid className="display-center">
@@ -57,10 +58,21 @@ const ResetPassword = () => {
           {(props) => (
             <Form >
               <Field
-                as={TextField}   label="Password"  name="password"  variant="outlined"  fullWidth className="tfStyle"  helperText={<ErrorMessage name="password" />}
+                as={TextField}   
+                label="Password"  
+                name="password"  
+                variant="outlined"
+                type="password"  
+                fullWidth className="tfStyle"  
+                helperText={<ErrorMessage name="password" />}
               />
               <Field
-                as={TextField}   label="ConfirmPassword"  name="confirmPassword"  variant="outlined"  fullWidth className="tfStyle"  helperText={<ErrorMessage name="confirmPassword" />}
+                as={TextField}   
+                label="ConfirmPassword"  
+                name="confirmPassword"  
+                variant="outlined"  
+                fullWidth className="tfStyle"  
+                helperText={<ErrorMessage name="confirmPassword" />}
               />
               <Grid container className="buttonStyle1" >
                 <Button  type="submit"  color="primary"  variant="contained"  fullWidth>  Next</Button>
