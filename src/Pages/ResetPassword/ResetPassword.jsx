@@ -8,7 +8,7 @@ import { useHistory } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import * as Yup from "yup";
 
-const ResetPassword = () => {
+const ResetPassword = (props) => {
 
   const initialValues = {
     password: "",
@@ -16,8 +16,19 @@ const ResetPassword = () => {
   };
   const history = useHistory();
 
+  let token = props.match.params.token;
+  console.log("token is : " +token);
   const onSubmits = (values, props) => {
-    Services(values)
+    // var tokeninput = this.token.split("/");
+    // const tokenString = tokeninput.toString();
+      // var requiredToken = tokenString.substring(6);
+      // var  token = requiredToken;
+    let resetPasswordData = {
+      password: values.password,
+      confirmPassword: values.confirmPassword
+    };
+
+    Services.resetPassword(resetPasswordData, token)
       .then((res) => {
         setTimeout(() => {
           props.resetForm();
@@ -34,6 +45,8 @@ const ResetPassword = () => {
         });
       });
   };
+
+
 
   const validationSchema = Yup.object().shape({
     password: Yup.string()
@@ -75,7 +88,13 @@ const ResetPassword = () => {
                 helperText={<ErrorMessage name="confirmPassword" />}
               />
               <Grid container className="buttonStyle1" >
-                <Button  type="submit"  color="primary"  variant="contained"  fullWidth>  Next</Button>
+                <Button  type="submit"  
+                color="primary"  
+                variant="contained" 
+                disabled={props.isSubmitting}
+                fullWidth>
+                {props.isSubmitting ? "Loading" : "Next"} 
+                </Button>
               </Grid>
             </Form>
           )}

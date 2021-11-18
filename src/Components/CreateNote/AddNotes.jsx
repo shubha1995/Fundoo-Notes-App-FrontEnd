@@ -70,8 +70,11 @@ export default function AddNote(props) {
       titleDisplay(false);
       return null;
     }
+    
   };
 
+
+  
   return (
     <div
       data-testId="close"
@@ -131,7 +134,8 @@ export default function AddNote(props) {
           ) : (
             <div className="closeNotes" data-testid="Save">
               {" "}
-              <IconButton className={classes.closeNotes} onClick={closeNote}>
+              <IconButton className={classes.closeNotes}
+               onClick={closeNote}>
                 Add
               </IconButton>
             </div>

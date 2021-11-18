@@ -18,7 +18,7 @@ function App() {
       <Route path ='/register' component={Register}/>
       <Route exact path = '/' component = {Login}/>
       <Route path ='/forgotPassword' component={FrogotPassword}/>
-      <Route path="/resetPassword" component={resetpassword} />
+      <Route path="/resetPassword/:token" component={resetpassword} />
       <ProtectedRoute
             path="/dashboard"
             component={Dashboard}
