@@ -3,10 +3,7 @@
 import React from "react";
 import InputBase from "@material-ui/core/InputBase";
 import { makeStyles } from "@material-ui/core/styles";
-import CheckBoxOutlinedIcon from "@material-ui/icons/CheckBoxOutlined";
-import BrushOutlinedIcon from "@material-ui/icons/BrushOutlined";
 import IconButton from "@material-ui/core/IconButton";
-import ImageOutlinedIcon from "@material-ui/icons/ImageOutlined";
 import NoteOptions from "../NoteOptions/NoteOptions";
 import Services from "../../Services/NotesServices.js";
 import { toast, ToastContainer } from "react-toastify"; 
