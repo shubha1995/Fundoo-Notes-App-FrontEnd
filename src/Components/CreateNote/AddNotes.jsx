@@ -64,12 +64,50 @@ export default function AddNote(props) {
         console.log("Error = " + err);
       });
    
-    
+    let formData = new FormData();
     if (title === undefined && note === undefined) {
       console.log("Please Enter Data");
       setClr("#fafafa");
       titleDisplay(false);
       return null;
+    }
+    formData.append("title", title);
+    console.log("title",title);
+    formData.append("description", note);
+    console.log("inside formData" + formData);
+
+    if (edit) {
+      
+      console.log("inside update")
+      formData.append("noteId", noteId);
+      Services
+        .updateNotes(formData)
+        .then((data) => {
+          console.log("Update Data: " + data);
+          props.getall();
+        })
+        .catch((err) => {
+          console.log("Update Data Error = " + err);
+        });
+        
+      titleDisplay(false);
+      props.dialogOff();
+    } 
+    else {
+    Services
+        .addNote(formData)
+        .then((data) => {
+          console.log("Add Notes: " + data);
+          props.getall();
+        })
+        .catch((err) => {
+          console.log("Error = " + err);
+        });
+      setTitle("");
+      setNote("");
+      setEdit("")
+      setClr("#fafafa");
+      titleDisplay(false);
     }
   };
 
