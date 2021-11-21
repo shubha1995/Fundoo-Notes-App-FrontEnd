@@ -17,12 +17,7 @@ const ResetPassword = (props) => {
   const history = useHistory();
 
   let token = props.match.params.token;
-  console.log("token is : " +token);
   const onSubmits = (values, props) => {
-    // var tokeninput = this.token.split("/");
-    // const tokenString = tokeninput.toString();
-      // var requiredToken = tokenString.substring(6);
-      // var  token = requiredToken;
     let resetPasswordData = {
       password: values.password,
       confirmPassword: values.confirmPassword

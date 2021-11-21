@@ -78,7 +78,7 @@ const validationSchema = Yup.object().shape({
               <h3 className="header" data-testid="title">
                 <FundooHeader />
                 <h2 className="headerStyle" data-testid="register">
-                  Create your Fundo Account
+                Please fill form to create an account !
                 </h2>
                 </h3>
               </Grid>
@@ -188,7 +188,7 @@ const validationSchema = Yup.object().shape({
               <img
                 className="IMG"
                 src="https://ssl.gstatic.com/accounts/signup/glif/account.svg"
-                alt=""
+                alt="registerImage"
               />
               <p className="imgContain">Create your own notes</p>
             </Grid>

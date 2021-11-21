@@ -51,6 +51,7 @@ export default function AddNote(props) {
     const formval = {
       title: title,
       description: note,
+      
     };
     Services.addNote(formval)
       .then((data) => {
@@ -62,15 +63,14 @@ export default function AddNote(props) {
         toast.error("Note not created");
         console.log("Error = " + err);
       });
-
-
+   
+    
     if (title === undefined && note === undefined) {
       console.log("Please Enter Data");
       setClr("#fafafa");
       titleDisplay(false);
       return null;
     }
-    
   };
 
 
@@ -97,7 +97,7 @@ export default function AddNote(props) {
               placeholder="Title"
               value={title}
               fullWidth
-              onChange={(e) => setTitle(e.target.value)}
+              onChange={(e) => setTitle( e.target.value)}
             />
           </div>
         </div>
@@ -108,7 +108,7 @@ export default function AddNote(props) {
               placeholder="Take a note..."
               value={note}
               fullWidth
-              onChange={(e) => setNote(e.target.value)}
+              onChange={(e) => setNote( e.target.value)}
             />
           </div>
         </div>
@@ -121,7 +121,7 @@ export default function AddNote(props) {
         <div className="addNoteOptions" data-testid="editId">
           <NoteOptions
             setClr={setClr}
-            setEdited={edit}
+            setEdit={edit}
             getall={props.getall}
             editId={props.editId}
             archive={archive}
@@ -129,9 +129,8 @@ export default function AddNote(props) {
             dialogOff={props.dialogOff}
             takeNote={takeNote}
           />
-          {trash ? (
-            " "
-          ) : (
+          {trash ? 
+            " " : 
             <div className="closeNotes" data-testid="Save">
               {" "}
               <IconButton className={classes.closeNotes}
@@ -139,7 +138,7 @@ export default function AddNote(props) {
                 Add
               </IconButton>
             </div>
-          )}
+          }
         </div>
       </div>
     </div>

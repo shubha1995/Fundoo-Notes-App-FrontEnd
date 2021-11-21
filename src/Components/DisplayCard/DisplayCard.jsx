@@ -22,7 +22,7 @@ const useStyles = makeStyles((theme) => ({
   noteText: {
     wordWrap: "break-word",
     margin: "4px 4px 4px 4px",
-  },
+  },  
 }));
 
 export default function DisplayNotes(props) {
@@ -57,6 +57,7 @@ export default function DisplayNotes(props) {
   const dialogClose = () => {
     setOpen(false);
   };
+
 
   const Note = () => {
     console.log(" props.notes :: ", props.notes);

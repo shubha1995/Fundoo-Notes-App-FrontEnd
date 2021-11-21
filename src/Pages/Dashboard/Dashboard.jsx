@@ -241,7 +241,7 @@ export default function Dashboard(props) {
           <span className="leftOptions">
             <div className="startOptions">
               <div className="menuButton tooltip">
-                <span class="tooltiptext">menu</span>
+                <span className="tooltiptext">menu</span>
                 <IconButton
                   className={classes.appBarButton}
                   onClick={drawerOpenClose}
@@ -284,21 +284,21 @@ export default function Dashboard(props) {
                 </IconButton>
               </div>
               <div className="button tooltip ">
-                <span class="tooltiptext">Refresh</span>
+                <span className="tooltiptext">Refresh</span>
                 <IconButton className={classes.appBarButton}>
                   <ReplayOutlinedIcon className={classes.iconLogo} />
                 </IconButton>
               </div>
 
               <div className="button tooltip">
-                <span class="tooltiptext">list view</span>
+                <span className="tooltiptext">list view</span>
                 <IconButton className={classes.appBarButton}>
                   <DnsRoundedIcon className={classes.iconLogo} />
                 </IconButton>
               </div>
 
               <div className="button tooltip">
-                <span class="tooltiptext">Setting</span>
+                <span className="tooltiptext">Setting</span>
                 <IconButton
                   className={classes.appBarButton}
                   onClick={settingHandleClick}
@@ -330,7 +330,7 @@ export default function Dashboard(props) {
                 </Paper>
               </div>
             </div>
-            <div class="appsContainer">
+            <div className="appsContainer">
               <div className="button">
                 <IconButton className={classes.appBarButton}>
                   <AppsRoundedIcon className={classes.iconLogo} />

@@ -15,13 +15,7 @@ class UserNoteServices {
       });
     };
 
-    static updateNotes = (data) => {
-        const token = localStorage.getItem("token");
-        console.log("updateToken ::", token);
-        return Axios.put(`http://localhost:3000/updatenotes/${data.id}`, data, {
-          headers: { Authorization: `Bearer ${token}` },
-        });
-      };
+   
 
       static deleteForever = (data) => {
         const token = localStorage.getItem("token");
@@ -38,7 +32,7 @@ class UserNoteServices {
 
       static resetPassword = (data, token) => {
         console.log("token -> ", token);
-        return Axios.post(`http://localhost:3000/resetPassword/${token}`, data );
+        return Axios.post(`http://localhost:3000/resetPassword/${token}`, data);
       };
   }
   

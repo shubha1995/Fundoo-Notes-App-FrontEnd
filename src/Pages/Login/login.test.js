@@ -6,7 +6,7 @@ import "@testing-library/jest-dom/extend-expect";
 it("correct header when login page render", () => {
   const { getByTestId } = render(<Login />);
   const header = getByTestId("login");
-  expect(header).toHaveTextContent("Sign in");
+  expect(header).toHaveTextContent("Sign In");
 });
 it("should give wrong header and get error", () => {
   const { getByTestId } = render(<Login />);

@@ -49,7 +49,7 @@ export default function NoteOptions(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [anchorE2, setAnchorE2] = React.useState(null);
   const [noteId] = React.useState(props.editId);
-  //const [edit, setEdit] = React.useState(props.setEdited);
+  // const [edit, setEdit] = React.useState(props.setEdited);
   const [archive] = React.useState(props.archive);
   const [trash] = React.useState(props.trash);
 
