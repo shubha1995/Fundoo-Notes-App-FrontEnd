@@ -1,3 +1,4 @@
+/* eslint-disable react/style-prop-object */
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import NoteOptions from "../../Components/NoteOptions/NoteOptions";
@@ -38,14 +39,14 @@ export default function DisplayNotes(props) {
     dialogClose();
     setOpen(false);
   };
-
   const dialogOpen = (e, data) => {
     e.stopPropagation();
     setEdit(true);
     setTitle(data.title);
     setNote(data.description);
     setClr(data.color);
-    setNoteId(data.id);
+    setNoteId(data._id);
+    
     setOpen(true);
   };
 
@@ -60,7 +61,7 @@ export default function DisplayNotes(props) {
 
 
   const Note = () => {
-    console.log(" props.notes :: ", props.notes);
+    
     return (
       <div className="AllNotes">
         {props.notes.length &&
@@ -71,7 +72,8 @@ export default function DisplayNotes(props) {
               style={{ backgroundColor: data.color }}
             >
               <div className="inputBlock" onClick={(e) => dialogOpen(e, data)}>
-                <Typography className={classes.noteText}>
+            
+                <Typography className={classes.noteText} >
                   {data.title}
                 </Typography>
                 <Typography className={classes.noteText}>
@@ -81,7 +83,7 @@ export default function DisplayNotes(props) {
               <div className="optionContainer">
                 <div
                   onMouseEnter={(e) => {
-                    storeOption(e, data.id);
+                    storeOption(e, data._id);
                     setClr(clr);
                   }}
                   onMouseOver={setEdit(true)}
@@ -89,8 +91,8 @@ export default function DisplayNotes(props) {
                 >
                   <NoteOptions
                     setDelete={setDelete}
-                    //setColor={clr}
-                    // setClr={setClr}
+                    setColor={clr}
+                    setClr={setClr}
                     editId={data._id}
                     setEdited={edit}
                     getall={props.getall}

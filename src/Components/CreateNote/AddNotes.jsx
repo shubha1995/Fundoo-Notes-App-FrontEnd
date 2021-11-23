@@ -34,85 +34,50 @@ export default function AddNote(props) {
   var [showTitle, titleDisplay] = React.useState(props.editOpen);
   var [title, setTitle] = React.useState(props.editTitle);
   var [note, setNote] = React.useState(props.editDisc);
-  const [edit, setEdit] = React.useState(props.setEdited);
+  const [edit] = React.useState(props.setEdited);
   const [clr, setClr] = React.useState(props.editColor);
-  const [noteId, setNoteId] = React.useState(props.editId);
-  const [archive, setArchive] = React.useState(props.archive);
-  const [trash, setTrash] = React.useState(props.trash);
-  const [takeNote, setTakeNote] = React.useState(true);
+  const [noteId] = React.useState(props.editId);
+  const [archive] = React.useState(props.archive);
+  const [trash] = React.useState(props.trash);
+  const [takeNote] = React.useState(true);
 
+ 
   const clickedNote = () => {
     titleDisplay(true);
-    console.log("i m in ");
   };
 
   const closeNote = () => {
-    console.log("onclosedcalled");
-    const formval = {
+   const formval = {
       title: title,
       description: note,
-      
+      id: [noteId]
     };
+    if (!edit) {
     Services.addNote(formval)
       .then((data) => {
-        console.log("Add Notes: " + data);
         toast.success("Notes created");
         props.getall();
       })
       .catch((err) => {
         toast.error("Note not created");
-        console.log("Error = " + err);
       });
-   
-    let formData = new FormData();
-    if (title === undefined && note === undefined) {
-      console.log("Please Enter Data");
-      setClr("#fafafa");
-      titleDisplay(false);
-      return null;
-    }
-    formData.append("title", title);
-    console.log("title",title);
-    formData.append("description", note);
-    console.log("inside formData" + formData);
 
-    if (edit) {
+      }
       
-      console.log("inside update")
-      formData.append("noteId", noteId);
+      else {
       Services
-        .updateNotes(formData)
+        .updateNotes(formval)
         .then((data) => {
-          console.log("Update Data: " + data);
           props.getall();
         })
         .catch((err) => {
-          console.log("Update Data Error = " + err);
         });
         
       titleDisplay(false);
       props.dialogOff();
     } 
-    else {
-    Services
-        .addNote(formData)
-        .then((data) => {
-          console.log("Add Notes: " + data);
-          props.getall();
-        })
-        .catch((err) => {
-          console.log("Error = " + err);
-        });
-      setTitle("");
-      setNote("");
-      setEdit("")
-      setClr("#fafafa");
-      titleDisplay(false);
-    }
   };
 
-
-  
   return (
     <div
       data-testId="close"
@@ -159,7 +124,7 @@ export default function AddNote(props) {
         <div className="addNoteOptions" data-testid="editId">
           <NoteOptions
             setClr={setClr}
-            setEdit={edit}
+            setEdited={edit}
             getall={props.getall}
             editId={props.editId}
             archive={archive}

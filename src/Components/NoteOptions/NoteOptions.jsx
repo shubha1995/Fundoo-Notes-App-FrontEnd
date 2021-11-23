@@ -49,7 +49,7 @@ export default function NoteOptions(props) {
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [anchorE2, setAnchorE2] = React.useState(null);
   const [noteId] = React.useState(props.editId);
-  // const [edit, setEdit] = React.useState(props.setEdited);
+  const [edit, setEdit] = React.useState(props.setEdited);
   const [archive] = React.useState(props.archive);
   const [trash] = React.useState(props.trash);
 
@@ -80,26 +80,20 @@ export default function NoteOptions(props) {
     let data = {
       id: [noteId],
     };
-    console.log("dlt", data);
-    console.log("deleted", noteId);
     Services.deleteForever(data)
       .then((data) => {
-        console.log("Note deleted " + data);
         props.getall();
       })
       .catch((err) => {
-        console.log("Error while deleting" + err);
       });
   };
 
   const colorsHandleClick = (event) => {
     setAnchorEl(event.currentTarget);
-    console.log("setE1 :: ", event.currentTarget);
   };
 
   const colorsHandleClose = () => {
     setAnchorEl(null);
-    console.log("setAnchorEl ::", setAnchorEl(null));
   };
 
   const passColor = (e, colr) => {};
