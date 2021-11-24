@@ -12,13 +12,11 @@ import "./AddNotes.scss";
 
 
 export default function AddNote(props) {
-  // const classes = useStyles();
-  var [showTitle, titleDisplay] = React.useState(props.editOpen);
-  var [title, setTitle] = React.useState(props.editTitle);
-  var [note, setNote] = React.useState(props.editDisc);
+  const [showTitle, titleDisplay] = React.useState(props.editOpen);
+  const [title, setTitle] = React.useState(props.noteDetail?.title);
+  const [note, setNote] = React.useState(props.noteDetail?.description);
   const [edit] = React.useState(props.setEdited);
   const [clr, setClr] = React.useState(props.editColor);
-  const [noteId] = React.useState(props.editId);
   const [archive] = React.useState(props.archive);
   const [trash] = React.useState(props.trash);
   const [takeNote] = React.useState(true);
@@ -32,7 +30,7 @@ export default function AddNote(props) {
    const formval = {
       title: title,
       description: note,
-      id: [noteId]
+      id: [props.noteDetail?._id]
     };
     if (!edit) {
     Services.addNote(formval)
@@ -59,6 +57,7 @@ export default function AddNote(props) {
       titleDisplay(false);
       props.dialogOff();
     } 
+    
   };
 
   return (

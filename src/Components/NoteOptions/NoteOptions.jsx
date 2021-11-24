@@ -1,16 +1,13 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react/jsx-no-duplicate-props */
 import React from "react";
-import { makeStyles } from "@material-ui/core/styles";
 import AddAlertIcon from "@material-ui/icons/AddAlertOutlined";
+import ArchiveOutlinedIcon from '@material-ui/icons/ArchiveOutlined';
 import PersonAddIcon from "@material-ui/icons/PersonAddOutlined";
 import IconButton from "@material-ui/core/IconButton";
-import ImageOutlinedIcon from "@material-ui/icons/ImageOutlined";
 import DeleteForeverRoundedIcon from "@material-ui/icons/DeleteForeverRounded";
 import ColorLensOutlinedIcon from "@material-ui/icons/ColorLensOutlined";
-import SystemUpdateAltOutlinedIcon from "@material-ui/icons/SystemUpdateAltOutlined";
 import MoreVertOutlinedIcon from "@material-ui/icons/MoreVertOutlined";
-import PublishRoundedIcon from "@material-ui/icons/PublishRounded";
 import RestoreFromTrashRoundedIcon from "@material-ui/icons/RestoreFromTrashRounded";
 import Menu from "@material-ui/core/Menu";
 import MenuItem from "@material-ui/core/MenuItem";
@@ -22,7 +19,6 @@ export default function NoteOptions(props) {
   const [open] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [anchorE2, setAnchorE2] = React.useState(null);
-  const [noteId] = React.useState(props.editId);
   const [edit, setEdit] = React.useState(props.setEdited);
   const [archive] = React.useState(props.archive);
   const [trash] = React.useState(props.trash);
@@ -52,7 +48,7 @@ export default function NoteOptions(props) {
 
   const deleted = () => {
     let data = {
-      id: [noteId],
+      id: [props.noteDetail?._id],
     };
     Services.deleteForever(data)
       .then((data) => {
@@ -71,6 +67,8 @@ export default function NoteOptions(props) {
   };
 
   const passColor = (e, colr) => {};
+
+
 
   const restore = () => {};
 
@@ -111,8 +109,9 @@ export default function NoteOptions(props) {
               <ColorLensOutlinedIcon />
             </IconButton>
             <IconButton>
-              <ImageOutlinedIcon />
+              <ArchiveOutlinedIcon/>
             </IconButton>
+            
 
             <IconButton onClick={deleteHandleOpen}>
               <MoreVertOutlinedIcon />

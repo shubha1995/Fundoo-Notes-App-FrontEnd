@@ -10,10 +10,8 @@ import "./DisplayCard.scss";
 export default function DisplayNotes(props) {
   const [open, setOpen] = React.useState(false);
   const [edit, setEdit] = React.useState(false);
-  var [title, setTitle] = React.useState("");
-  var [note, setNote] = React.useState("");
   const [clr, setClr] = React.useState("#fafafa");
-  const [noteId, setNoteId] = React.useState();
+  const [noteData, setNoteData] = React.useState({ title: '', note: '', noteId: '' });
 
   const setDelete = () => {
     dialogClose();
@@ -22,17 +20,15 @@ export default function DisplayNotes(props) {
   const dialogOpen = (e, data) => {
     e.stopPropagation();
     setEdit(true);
-    setTitle(data.title);
-    setNote(data.description);
     setClr(data.color);
-    setNoteId(data._id);
+    setNoteData(data);
     
     setOpen(true);
   };
 
   const storeOption = (e, data) => {
     e.stopPropagation();
-    setNoteId(data);
+    setNoteData(data);
   };
 
   const dialogClose = () => {
@@ -74,6 +70,7 @@ export default function DisplayNotes(props) {
                     setColor={clr}
                     setClr={setClr}
                     editId={data._id}
+                    noteDetail={noteData}
                     setEdited={edit}
                     getall={props.getall}
                   />
@@ -97,9 +94,7 @@ export default function DisplayNotes(props) {
             dialogOff={dialogClose}
             getall={props.getall}
             editOpen={open}
-            editId={noteId}
-            editTitle={title}
-            editDisc={note}
+            noteDetail={noteData}
             editColor={clr}
           />
         </Dialog>

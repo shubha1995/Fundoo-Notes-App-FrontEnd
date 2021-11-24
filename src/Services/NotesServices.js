@@ -39,6 +39,14 @@ class UserNoteServices {
       static resetPassword = (data, token) => {
         return Axios.post(`http://localhost:3000/resetPassword/${token}`, data);
       };
+
+  
+    // static addNote = (labelData) => {
+    //   const token = localStorage.getItem("token");
+    //   return Axios.post("http://localhost:3000/createlabel", labelData, {
+    //     headers: { Authorization: `Bearer ${token}` },
+    //   });
+    // };
   }
   
   export default UserNoteServices;
