@@ -18,33 +18,7 @@ import Paper from "@material-ui/core/Paper";
 import Services from "../../Services/NotesServices.js";
 import "./NoteOptions.scss";
 
-const useStyles = makeStyles((theme) => ({
-  optionButton: {
-    width: "100%",
-  },
-  colorPaper: {
-    marginLeft: theme.spacing(5),
-  },
-  button: {
-    padding: "6px",
-  },
-
-  colorButton: {
-    margin: "2px",
-    width: "5px",
-    height: "5px",
-    "&:hover": {
-      border: "black 2px solid",
-    },
-  },
-
-  paper: {
-    marginRight: theme.spacing(2),
-  },
-}));
-
 export default function NoteOptions(props) {
-  const classes = useStyles();
   const [open] = React.useState(false);
   const [anchorEl, setAnchorEl] = React.useState(null);
   const [anchorE2, setAnchorE2] = React.useState(null);
@@ -105,7 +79,6 @@ export default function NoteOptions(props) {
       <div className="colorMenu" onClick={colorsHandleClose}>
         {colors.map((color) => (
           <IconButton
-            className={classes.colorButton}
             onClick={(e) => passColor(e, color.color)}
             style={{ backgroundColor: color.color }}
           ></IconButton>
@@ -115,47 +88,45 @@ export default function NoteOptions(props) {
   };
 
   return (
-    <div className={classes.optionButton}>
+    <div>
       <div>
         {trash ? (
           <div>
-            <IconButton className={classes.button}>
+            <IconButton >
               <DeleteForeverRoundedIcon onClick={deleted} />
             </IconButton>
-            <IconButton className={classes.button}>
+            <IconButton>
               <RestoreFromTrashRoundedIcon onClick={restore} />
             </IconButton>
           </div>
         ) : (
           <div className="optionfield">
-            <IconButton className={classes.button}>
+            <IconButton>
               <AddAlertIcon />
             </IconButton>
-            <IconButton className={classes.button}>
+            <IconButton>
               <PersonAddIcon />
             </IconButton>
-            <IconButton onClick={colorsHandleClick} className={classes.button}>
+            <IconButton onClick={colorsHandleClick}>
               <ColorLensOutlinedIcon />
             </IconButton>
-            <IconButton className={classes.button}>
+            <IconButton>
               <ImageOutlinedIcon />
             </IconButton>
 
-            <IconButton className={classes.button} onClick={deleteHandleOpen}>
+            <IconButton onClick={deleteHandleOpen}>
               <MoreVertOutlinedIcon />
             </IconButton>
           </div>
         )}
       </div>
       <div
-        className={classes.colorWindow}
         style={{ display: open ? "block" : "none" }}
         onClick={colorsHandleClose}
       >
         <Paper open={Boolean(open)}>
           <Menu
             open={Boolean(open)}
-            className={classes.colorPaper}
             anchorEl={anchorEl}
             open={Boolean(anchorEl)}
           >
@@ -166,7 +137,6 @@ export default function NoteOptions(props) {
       <div>
         <Paper>
           <Menu
-            className={classes.settingMenu}
             anchorEl={anchorE2}
             open={Boolean(anchorE2)}
             onClose={deletesHandleClose}

@@ -11,26 +11,8 @@ import "react-toastify/dist/ReactToastify.css";
 import "./AddNotes.scss";
 
 
-const useStyles = makeStyles((theme) => ({
-  titleInput: {
-    padding: "10px 15px",
-    width: "70%",
-  },
-  noteInput: {
-    padding: "10px 15px",
-  },
-  closeNotes: {
-    padding: "10px 10px 10px 10px",
-    fontSize: "17px",
-    justifySelf: "flex-end",
-    fontFamily: "Google Sans ,Roboto,Arial,sans-serif",
-    borderRadius: "5px",
-    cursor: "pointer",
-  },
-}));
-
 export default function AddNote(props) {
-  const classes = useStyles();
+  // const classes = useStyles();
   var [showTitle, titleDisplay] = React.useState(props.editOpen);
   var [title, setTitle] = React.useState(props.editTitle);
   var [note, setNote] = React.useState(props.editDisc);
@@ -71,6 +53,7 @@ export default function AddNote(props) {
           props.getall();
         })
         .catch((err) => {
+          console.log(err)
         });
         
       titleDisplay(false);
@@ -93,10 +76,8 @@ export default function AddNote(props) {
           <div
             className="titleInput"
             data-testid="title"
-            className={classes.titleInput}
           >
             <InputBase
-              className={classes.input}
               placeholder="Title"
               value={title}
               fullWidth
@@ -107,7 +88,6 @@ export default function AddNote(props) {
         <div class="simpleNoteShow">
           <div className="noteInput" data-testid="description">
             <InputBase
-              className={classes.input}
               placeholder="Take a note..."
               value={note}
               fullWidth
@@ -136,7 +116,7 @@ export default function AddNote(props) {
             " " : 
             <div className="closeNotes" data-testid="Save">
               {" "}
-              <IconButton className={classes.closeNotes}
+              <IconButton 
                onClick={closeNote}>
                 Add
               </IconButton>

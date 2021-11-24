@@ -6,8 +6,6 @@ import "./Notes.scss";
 export default function Notes(props) {
     const [notes, setNotes] = React.useState([]);
   
-    console.log("get notes files called");
-  
     const getAllNotes = () => {
       Services.getNotes()
         .then((res) => {

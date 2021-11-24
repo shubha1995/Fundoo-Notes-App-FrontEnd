@@ -7,6 +7,22 @@
     border-radius: 10px;
   }
   
+  .titleInput {
+    padding: 10px 15px;
+    width: 70%;
+  }
+  .noteInput {
+    padding: 10px 15px;
+  }
+  .closeNotes {
+    padding: 10px 10px 10px 10px;
+    font-size: 17px;
+    justify-self: flex-end;
+    font-family: Google Sans ,Roboto,Arial,sans-serif;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
   .notesField {
     display: flex;
     flex-direction: column;
@@ -34,7 +50,7 @@
   .closeNotes {
     padding: 10px 10px 10px 10px;
     font-size: 10px;
-    font-family: "Google Sans", Roboto, Arial, sans-serif;
+    font-family: Google Sans, Roboto, Arial, sans-serif;
   }
   .closeNotes:hover {
     border-radius: 5px;

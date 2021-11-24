@@ -8,6 +8,28 @@
     border: black solid 1px;
     border-radius: 100px;
   }
+
+  .optionButton {
+    width: "100%";
+  };
+  .colorPaper {
+    margin-left: spacing(5);
+  };
+  .button {
+    padding: "6px";
+  };
+  .colorButton {
+    margin: "2px";
+    width: "5px";
+    height: "5px";
+    hover: {
+      border: "black 2px solid",
+    };
+  };
+
+  .paper {
+    margin-right: spacing(2);
+  };
   
   @media only screen and (max-width: 400px) {
     .optionfield {

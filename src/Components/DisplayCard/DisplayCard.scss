@@ -9,6 +9,22 @@
     border-radius: 8px;
     margin: 1%;
   }
+
+  .dialogBox {
+    display: "flex";
+    flex-direction: "column";
+    justify-content: "center";
+    align-items: "center";
+  };
+  .dialogOptions {
+    width: "100%";
+    display: "flex";
+    justify-content: "flex-start";
+  }
+  .noteText {
+    word-wrap: "break-word";
+    margin: "4px 4px 4px 4px";
+  }
  
   .optionContainer {
     height: 30px;
