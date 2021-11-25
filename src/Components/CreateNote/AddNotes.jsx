@@ -117,7 +117,7 @@ export default function AddNote(props) {
               {" "}
               <IconButton 
                onClick={closeNote}>
-                Add
+              Add
               </IconButton>
             </div>
           }

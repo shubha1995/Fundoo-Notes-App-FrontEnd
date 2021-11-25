@@ -5,6 +5,7 @@ import Dialog from "@material-ui/core/Dialog";
 import AddNote from "../../Components/CreateNote/AddNotes";
 import Typography from "@material-ui/core/Typography";
 import "./DisplayCard.scss";
+import AddLabel  from "../Label/AddLabel"
 
 
 export default function DisplayNotes(props) {
@@ -12,6 +13,7 @@ export default function DisplayNotes(props) {
   const [edit, setEdit] = React.useState(false);
   const [clr, setClr] = React.useState("#fafafa");
   const [noteData, setNoteData] = React.useState({ title: '', note: '', noteId: '' });
+  const [noteLabel, setNoteLabel] = React.useState({ label: '', noteId: '' });
 
   const setDelete = () => {
     dialogClose();
@@ -22,6 +24,7 @@ export default function DisplayNotes(props) {
     setEdit(true);
     setClr(data.color);
     setNoteData(data);
+    setNoteLabel(data);
     
     setOpen(true);
   };
@@ -29,6 +32,7 @@ export default function DisplayNotes(props) {
   const storeOption = (e, data) => {
     e.stopPropagation();
     setNoteData(data);
+    setNoteLabel(data);
   };
 
   const dialogClose = () => {
@@ -55,6 +59,9 @@ export default function DisplayNotes(props) {
                 <Typography >
                   {data.description}
                 </Typography>
+                <Typography >
+                  {data.label}
+                </Typography>
               </div>
               <div className="optionContainer">
                 <div
@@ -73,7 +80,9 @@ export default function DisplayNotes(props) {
                     noteDetail={noteData}
                     setEdited={edit}
                     getall={props.getall}
+                    labelDetail={noteLabel}
                   />
+                  
                 </div>
               </div>
             </div>
@@ -96,9 +105,12 @@ export default function DisplayNotes(props) {
             editOpen={open}
             noteDetail={noteData}
             editColor={clr}
+            labelDetail={noteLabel}
           />
         </Dialog>
       </div>
     </div>
   );
+  
+  
 }

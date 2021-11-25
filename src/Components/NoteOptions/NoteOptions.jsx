@@ -14,6 +14,7 @@ import MenuItem from "@material-ui/core/MenuItem";
 import Paper from "@material-ui/core/Paper";
 import Services from "../../Services/NotesServices.js";
 import "./NoteOptions.scss";
+import AddLabel from "../Label/AddLabel"
 
 export default function NoteOptions(props) {
   const [open] = React.useState(false);
@@ -23,6 +24,9 @@ export default function NoteOptions(props) {
   const [archive] = React.useState(props.archive);
   const [trash] = React.useState(props.trash);
 
+  // const clickedNote = () => {
+  //   titleDisplay(true);
+  // };
   const colors = [
     { color: "#fafafa" },
     { color: "#ef9a9a" },
@@ -141,6 +145,7 @@ export default function NoteOptions(props) {
             onClose={deletesHandleClose}
           >
             <MenuItem onClick={deleted}>Delete</MenuItem>
+            <MenuItem><AddLabel/></MenuItem>
           </Menu>
         </Paper>
       </div>

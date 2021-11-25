@@ -41,12 +41,20 @@ class UserNoteServices {
       };
 
   
-    // static addNote = (labelData) => {
-    //   const token = localStorage.getItem("token");
-    //   return Axios.post("http://localhost:3000/createlabel", labelData, {
-    //     headers: { Authorization: `Bearer ${token}` },
-    //   });
-    // };
+    static addLabel = (labelData) => {
+      const token = localStorage.getItem("token");
+      return Axios.post("http://localhost:3000/createlabel", labelData, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+    };
+    static getlabels = () => {
+      const token = localStorage.getItem("token");
+      return Axios.post("http://localhost:3000/getlabels",  {
+        headers: { Authorization: `Bearer ${token}` },
+      });
+    };
+    
+
   }
   
   export default UserNoteServices;
