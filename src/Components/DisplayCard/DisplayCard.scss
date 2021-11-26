@@ -46,7 +46,7 @@
   }
   .AllNotes {
     
-    display: flex;
+    display: inline-flex;
     flex-flow: wrap;
     align-items: flex-start;
     
@@ -55,6 +55,7 @@
   .textTitle {
     margin: 4px !important;
     font-weight: bold !important;
+    
   }
   .noteText {
     margin: 4px !important;

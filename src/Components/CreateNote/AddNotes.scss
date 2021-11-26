@@ -6,7 +6,9 @@
       2px 4px 6px 4px rgba(60, 64, 67, 0.149);
     border-radius: 10px;
   }
-  
+  .titleName{
+    font-weight: bold !important;
+  }
   .titleInput {
     padding: 10px 15px;
     width: 100%;
@@ -38,7 +40,6 @@
   .simpleNoteShow {
     display: flex;
     flex-direction: row;
-    // justify-content: space-between;
   }
   .addNoteOptions {
     display: flex;

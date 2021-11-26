@@ -75,7 +75,7 @@ export default function AddNote(props) {
             className="titleInput"
             data-testid="title"
           >
-            <InputBase
+            <InputBase className= "titleName"
               placeholder="Title"
               value={title}
               fullWidth
