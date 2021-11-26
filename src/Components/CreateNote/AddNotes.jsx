@@ -8,7 +8,6 @@ import Services from "../../Services/NotesServices.js";
 import { toast, ToastContainer } from "react-toastify"; 
 import "react-toastify/dist/ReactToastify.css";
 import "./AddNotes.scss";
-import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 
 
 export default function AddNote(props) {
@@ -80,8 +79,10 @@ export default function AddNote(props) {
               placeholder="Title"
               value={title}
               fullWidth
+              multiline
               onChange={(e) => setTitle( e.target.value)}
             /> 
+              
           </div>
         </div>
         <div class="simpleNoteShow" style={{ display: setNote ? "block" : "none" }}>
@@ -91,6 +92,7 @@ export default function AddNote(props) {
               placeholder="Take a note..."
               value={note}
               fullWidth
+              multiline
               onChange={(e) => setNote( e.target.value)}
             />
           </div>
