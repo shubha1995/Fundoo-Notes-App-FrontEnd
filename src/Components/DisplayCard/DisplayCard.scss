@@ -45,9 +45,19 @@
     margin: 3px 4px 4px 4px;
   }
   .AllNotes {
+    
     display: flex;
     flex-flow: wrap;
     align-items: flex-start;
+    
+  }
+
+  .textTitle {
+    margin: 4px !important;
+    font-weight: bold !important;
+  }
+  .noteText {
+    margin: 4px !important;
   }
   
   .addnoteNone {

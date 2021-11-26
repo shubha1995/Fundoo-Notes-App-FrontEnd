@@ -53,13 +53,13 @@ export default function DisplayNotes(props) {
             >
               <div className="inputBlock" onClick={(e) => dialogOpen(e, data)}>
             
-                <Typography  >
+                <Typography className="textTitle" >
                   {data.title}
                 </Typography>
-                <Typography >
+                <Typography className="noteText">
                   {data.description}
                 </Typography>
-                <Typography >
+                <Typography  className="noteText">
                   {data.label}
                 </Typography>
               </div>

@@ -192,6 +192,7 @@ export default function Dashboard(props) {
     setEditLabels(false);
     setAchive(false);
     setTrash(false);
+    nextPath("../dashboard/reminder");
   };
 
   const editLabelSelect = () => {
@@ -200,6 +201,7 @@ export default function Dashboard(props) {
     setEditLabels(true);
     setAchive(false);
     setTrash(false);
+    nextPath("../dashboard/editLabel");
   };
 
   const achiveSelect = () => {

@@ -2,7 +2,6 @@
 /* eslint-disable react/jsx-no-duplicate-props */
 import React from "react";
 import InputBase from "@material-ui/core/InputBase";
-import { makeStyles } from "@material-ui/core/styles";
 import IconButton from "@material-ui/core/IconButton";
 import NoteOptions from "../NoteOptions/NoteOptions";
 import Services from "../../Services/NotesServices.js";
@@ -81,10 +80,11 @@ export default function AddNote(props) {
               value={title}
               fullWidth
               onChange={(e) => setTitle( e.target.value)}
-            />
+            /> 
           </div>
         </div>
         <div class="simpleNoteShow">
+          
           <div className="noteInput" data-testid="description">
             <InputBase
               placeholder="Take a note..."
