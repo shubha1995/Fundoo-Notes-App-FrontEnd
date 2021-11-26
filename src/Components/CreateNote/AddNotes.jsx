@@ -8,6 +8,7 @@ import Services from "../../Services/NotesServices.js";
 import { toast, ToastContainer } from "react-toastify"; 
 import "react-toastify/dist/ReactToastify.css";
 import "./AddNotes.scss";
+import TextareaAutosize from '@material-ui/core/TextareaAutosize';
 
 
 export default function AddNote(props) {
@@ -83,7 +84,7 @@ export default function AddNote(props) {
             /> 
           </div>
         </div>
-        <div class="simpleNoteShow">
+        <div class="simpleNoteShow" style={{ display: setNote ? "block" : "none" }}>
           
           <div className="noteInput" data-testid="description">
             <InputBase
