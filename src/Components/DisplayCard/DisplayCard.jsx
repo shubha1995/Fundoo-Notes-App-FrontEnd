@@ -1,6 +1,6 @@
 /* eslint-disable react/style-prop-object */
 import React from "react";
-import { Grid } from "@material-ui/core";
+// import { Grid } from "@material-ui/core";
 import NoteOptions from "../../Components/NoteOptions/NoteOptions";
 import Dialog from "@material-ui/core/Dialog";
 import AddNote from "../../Components/CreateNote/AddNotes";
@@ -44,6 +44,8 @@ export default function DisplayNotes(props) {
   const Note = () => {
     
     return (
+      <div className="row">
+      <div className="column">
       <div className="AllNotes">
         
         {props.notes.length &&
@@ -54,6 +56,7 @@ export default function DisplayNotes(props) {
               style={{ backgroundColor: data.color }}
             >
               <div className="inputBlock" onClick={(e) => dialogOpen(e, data)}>
+                
                 <Typography className="textTitle" >
                   {data.title}
                 </Typography>
@@ -63,6 +66,7 @@ export default function DisplayNotes(props) {
                 <Typography  className="noteText">
                   {data.label}
                 </Typography>
+                
               </div>
               <div className="optionContainer">
                 <div
@@ -88,6 +92,8 @@ export default function DisplayNotes(props) {
               </div>
             </div>
           ))}
+      </div>
+      </div>
       </div>
     );
   };

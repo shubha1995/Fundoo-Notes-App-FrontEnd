@@ -45,17 +45,20 @@
     margin: 3px 4px 4px 4px;
   }
   .AllNotes {
-    
     display: inline-flex;
     flex-flow: wrap;
     align-items: flex-start;
     
   }
+  
 
   .textTitle {
     margin: 4px !important;
     font-weight: bold !important;
-    
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;  
+    overflow: hidden;
   }
   .noteText {
     margin: 4px !important;
