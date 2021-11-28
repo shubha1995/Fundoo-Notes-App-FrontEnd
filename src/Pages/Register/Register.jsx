@@ -44,17 +44,17 @@ const validationSchema = Yup.object().shape({
   });
 
   const onSubmit = (values, props) => {
-    console.log(values);
     if (values && !values.firstName && !values.lastName) return;
-    const userDetails = {
-      firstName: values.firstName,
-      lastName: values.lastName,
-      email: values.emailId,
-      password: values.password,
-    };
+    // const userDetails = {
+    //   firstName: values.firstName,
+    //   lastName: values.lastName,
+    //   email: values.emailId,
+    //   password: values.password,
+    // };
     userNode
-      .registration(userDetails)
+      .registration(values)
       .then((res) => {
+        props.resetForm()
         setTimeout(() => {
           history.push("/login");
         }, 5000);
@@ -167,7 +167,7 @@ const validationSchema = Yup.object().shape({
                     <Grid container spacing={5}>
                       <Grid item sm={12}>
                         <Button
-                          onClick={onSubmit}
+                          // onClick={onSubmit}
                           type="submit"
                           variant="contained"
                           color="primary"
