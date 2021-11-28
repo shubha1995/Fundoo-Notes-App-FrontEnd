@@ -45,14 +45,14 @@ const validationSchema = Yup.object().shape({
 
   const onSubmit = (values, props) => {
     if (values && !values.firstName && !values.lastName) return;
-    // const userDetails = {
-    //   firstName: values.firstName,
-    //   lastName: values.lastName,
-    //   email: values.emailId,
-    //   password: values.password,
-    // };
+    const userDetails = {
+      firstName: values.firstName,
+      lastName: values.lastName,
+      email: values.emailId,
+      password: values.password,
+    };
     userNode
-      .registration(values)
+      .registration(userDetails)
       .then((res) => {
         props.resetForm()
         setTimeout(() => {

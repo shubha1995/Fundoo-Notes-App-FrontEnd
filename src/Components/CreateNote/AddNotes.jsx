@@ -13,8 +13,9 @@ import "./AddNotes.scss";
 export default function AddNote(props) {
 
   const [showTitle, titleDisplay] = React.useState(props.editOpen);
-  const [title, setTitle] = React.useState(props.noteDetail?.title);
-  const [note, setNote] = React.useState(props.noteDetail?.description);
+  // const [title, setTitle] = React.useState(props.noteDetail?.title);
+  // const [note, setNote] = React.useState(props.noteDetail?.description);
+  const [noteData, setNoteData] = React.useState(props.noteDetail);
   const [edit] = React.useState(props.setEdited);
   const [clr, setClr] = React.useState(props.editColor);
   const [archive] = React.useState(props.archive);
@@ -25,11 +26,15 @@ export default function AddNote(props) {
     titleDisplay(true);
   };
 
+  const noteChangeHandler = (e, key) => {
+    setNoteData({ ...noteData, [key]: e.target.value });
+  }
+
   const closeNote = () => {
    const formval = {
-      title: title,
-      description: note,
-      id: [props.noteDetail?._id]
+    title: noteData?.title,
+    description: noteData?.description,
+    id: [noteData?._id]
     };
     if (!edit) {
     Services.addNote(formval)
@@ -79,23 +84,23 @@ export default function AddNote(props) {
           >
             <InputBase className= "titleName"
               placeholder="Title"
-              value={title}
+              value={noteData?.title}
               fullWidth
               multiline
-              onChange={(e) => setTitle( e.target.value)}
+              onChange={(e) => noteChangeHandler(e, "title")}
             /> 
               
           </div>
         </div>
-        <div class="simpleNoteShow" style={{ display: setNote ? "block" : "none" }}>
+        <div class="simpleNoteShow" style={{ display: setNoteData ? "block" : "none" }}>
           
           <div className="noteInput" data-testid="description">
             <InputBase
               placeholder="Take a note..."
-              value={note}
+              value={noteData?.description}
               fullWidth
               multiline
-              onChange={(e) => setNote( e.target.value)}
+              onChange={(e) => noteChangeHandler(e, "description")}
             />
           </div>
         </div>
@@ -121,10 +126,11 @@ export default function AddNote(props) {
             <div className="closeNotes" data-testid="Save">
               {" "}
               <IconButton 
+              className="closeButton"
                onClick={closeNote}
                type="submit"
                >
-              Add
+              close
               </IconButton>
             </div>
           }
