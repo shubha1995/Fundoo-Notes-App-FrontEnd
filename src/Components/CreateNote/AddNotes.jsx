@@ -13,8 +13,6 @@ import "./AddNotes.scss";
 export default function AddNote(props) {
 
   const [showTitle, titleDisplay] = React.useState(props.editOpen);
-  // const [title, setTitle] = React.useState(props.noteDetail?.title);
-  // const [note, setNote] = React.useState(props.noteDetail?.description);
   const [noteData, setNoteData] = React.useState(props.noteDetail);
   const [edit] = React.useState(props.setEdited);
   const [clr, setClr] = React.useState(props.editColor);
@@ -30,6 +28,11 @@ export default function AddNote(props) {
     setNoteData({ ...noteData, [key]: e.target.value });
   }
 
+  const resetHandler = () => {
+    let key = ["title", "description"]
+    key.map((key) => (setNoteData({ [key]: "" })));
+  } 
+
   const closeNote = () => {
    const formval = {
     title: noteData?.title,
@@ -40,8 +43,9 @@ export default function AddNote(props) {
     Services.addNote(formval)
       .then((data) => {
         toast.success("Notes created");
+        titleDisplay(false);
+        resetHandler(); 
         props.getall();
-        window.location.reload();
       })
       .catch((err) => {
         toast.error("Note not created");

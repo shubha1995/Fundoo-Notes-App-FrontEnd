@@ -4,8 +4,9 @@
     padding: 8px;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
+    justify-content: space-between;  
     border: #d3d3d3 solid 1px;
+    overflow: visible;
     border-radius: 8px;
     margin: 1%;
   }
@@ -24,6 +25,7 @@
   .noteText {
     word-wrap: "break-word";
     margin: "4px 4px 4px 4px";
+    overflow: hidden;
   }
  
   .optionContainer {
@@ -46,6 +48,7 @@
   }
   .AllNotes {
     display: inline-flex;
+    justify-content: space-between;
     flex-flow: wrap;
     align-items: flex-start;
     

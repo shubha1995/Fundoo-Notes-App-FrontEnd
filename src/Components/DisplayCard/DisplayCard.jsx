@@ -1,19 +1,17 @@
 /* eslint-disable react/style-prop-object */
 import React from "react";
-// import { Grid } from "@material-ui/core";
 import NoteOptions from "../../Components/NoteOptions/NoteOptions";
 import Dialog from "@material-ui/core/Dialog";
 import AddNote from "../../Components/CreateNote/AddNotes";
 import Typography from "@material-ui/core/Typography";
 import "./DisplayCard.scss";
-// import AddLabel  from "../Label/AddLabel"
 
 
 export default function DisplayNotes(props) {
   const [open, setOpen] = React.useState(false);
   const [edit, setEdit] = React.useState(false);
   const [clr, setClr] = React.useState("#fafafa");
-  // const [noteData, setNoteData] = React.useState({ title: '', note: '', noteId: '' });
+  
 
   const [noteData, setNoteData] = React.useState({ title: '', description: '', noteId: '' });
   const [noteLabel, setNoteLabel] = React.useState({ label: '', noteId: '' });
