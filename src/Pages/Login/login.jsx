@@ -83,7 +83,8 @@ const onSubmit=(values,props)=>{
                     helperText={<ErrorMessage name="password" />}
                   />
               <p className='register'>
-                <Button href='/forgotPassword' color='primary' variant = 'text'>Forgot password</Button>
+                <Button href='/forgotPassword' color='primary'
+                 variant = 'text'>Forgot password</Button>
               </p>  
                   <Button
                     data-testid="button"

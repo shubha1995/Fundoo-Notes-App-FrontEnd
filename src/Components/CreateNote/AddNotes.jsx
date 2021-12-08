@@ -8,7 +8,7 @@ import Services from "../../Services/NotesServices.js";
 import { toast, ToastContainer } from "react-toastify"; 
 import "react-toastify/dist/ReactToastify.css";
 import "./AddNotes.scss";
-
+import ClickAwayListener from '@material-ui/core/ClickAwayListener';
 
 export default function AddNote(props) {
 
@@ -70,6 +70,7 @@ export default function AddNote(props) {
     };
 
   return (
+    <ClickAwayListener onClickAway={closeNote}>
   
     <div
       data-testId="close"
@@ -141,5 +142,6 @@ export default function AddNote(props) {
         </div>
       </div>
     </div>
+    </ClickAwayListener>
   );
 }

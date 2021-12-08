@@ -33,6 +33,7 @@
       "react-app/jest"
     ]
   },
+  "start": "react-scripts --openssl-legacy-provider start",
   "browserslist": {
     "production": [
       ">0.2%",

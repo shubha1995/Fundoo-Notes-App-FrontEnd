@@ -4,7 +4,7 @@ import DisplayNotes from "../DisplayCard/DisplayCard";
 import Services from "../../Services/NotesServices.js";
 import "./Notes.scss";
 export default function Notes(props) {
-    const [notes, setNotes] = React.useState([]);
+const [notes, setNotes] = React.useState([]);
   
     const getAllNotes = () => {
       Services.getNotes()
